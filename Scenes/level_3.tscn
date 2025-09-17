@@ -1,0 +1,294 @@
+[gd_scene load_steps=14 format=4 uid="uid://g2o77e22hkaq"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_ng0s0"]
+[ext_resource type="PackedScene" uid="uid://be8fo6ccf13b6" path="res://Scenes/level_4.tscn" id="2_5e78q"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_76ybr"]
+[ext_resource type="PackedScene" uid="uid://oeeqtt33gyw1" path="res://Scenes/win_glow.tscn" id="3_5e78q"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="3_53xsp"]
+[ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="3_s8nj6"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="3_vwg62"]
+[ext_resource type="PackedScene" uid="uid://ucl80rxle6iu" path="res://Scenes/level_3_path.tscn" id="6_qf6rc"]
+
+[sub_resource type="Animation" id="Animation_l4wr6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5e78q"]
+resource_name = "win_glow"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rvg2"]
+_data = {
+&"RESET": SubResource("Animation_l4wr6"),
+&"win_glow": SubResource("Animation_5e78q")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e78q"]
+size = Vector2(160, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4wr6"]
+size = Vector2(40, 40)
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_ng0s0")
+score_required = 4
+next_level = ExtResource("2_5e78q")
+has_checkpoint = true
+
+[node name="Background" parent="." instance=ExtResource("2_76ybr")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="2"]
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAAAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD8/wAAAgABAAAAAAD8//7/AgABAAAAAAABAP//AgAAAAAAAAADAP//AgABAAAAAAACAAAAAgABAAAAAAABAAEAAgAAAAAAAAADAAEAAgABAAAAAAAAAAEAAgAAAAAAAAD//wAAAgAAAAAAAAD8////AgACAAAAAAD8/wEAAgACAAAAAAD9/wAAAgACAAAAAAD+////AgAAAAAAAAD+/wEAAgAAAAAAAAAAAP//AgAAAAAAAAADAP7/AgACAAAAAAABAAAAAgAAAAAAAAADAAAAAgACAAAAAAD8/wIAAgABAAAAAAADAAIAAgACAAAAAAADAP3/AgABAAAAAAD7/wMAAgABAAAAAAD8/wMAAgACAAAAAAAEAP3/AgACAAAAAAD8//3/AgACAAAAAAD+//3/AgACAAAAAAAAAP3/AgACAAAAAAACAP3/AgACAAAAAAACAAMAAgACAAAAAAABAAQAAgACAAAAAAAAAAMAAgACAAAAAAD+/wMAAgACAAAAAAD9//3/AgABAAAAAAD///3/AgABAAAAAAABAP3/AgABAAAAAAADAAMAAgABAAAAAAABAAMAAgABAAAAAAD9/wMAAgABAAAAAAD//wMAAgABAAAAAAD9//z/AgAAAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="3"]
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="StartGlow" parent="Background" index="4"]
+offset_left = -80.0
+offset_top = -40.0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="TileMapLayer" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD8//7/AAAEAAIAAAADAAIAAAAEAAIAAAADAP3/AAABAAAAAAD8////AAAEAAIAAAD8/wAAAAAAAAAAAAD8/wEAAAAEAAIAAAD8/wIAAAAEAAIAAAD7//3/AAACAAAAAAD9//7/AAAEAAAAAAD+//7/AAAFAAIAAAD///7/AAAFAAIAAAAAAP7/AAAFAAIAAAABAP7/AAAFAAIAAAACAP7/AAAFAAAAAAD9/wMAAAAFAAIAAAD+/wMAAAAFAAIAAAD//wMAAAAFAAIAAAAAAAMAAAAFAAIAAAABAAMAAAABAAAAAAACAAMAAAAFAAIAAAAEAP7/AAAEAAAAAAD7/wIAAAAFAAEAAAD7/wEAAAACAAAAAAD7/wAAAAACAAAAAAD7////AAACAAAAAAD7//7/AAACAAAAAAD7/wMAAAABAAEAAAAEAP3/AAADAAEAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAMAAAAFAAEAAAD9/wIAAAAEAAEAAAD+/wIAAAAFAAIAAAD//wIAAAAFAAIAAAAAAAIAAAAFAAIAAAABAAIAAAAFAAIAAAACAAIAAAAFAAEAAAACAP3/AAAFAAIAAAABAP3/AAAFAAIAAAAAAP3/AAAFAAIAAAD///3/AAAFAAIAAAD+//3/AAAFAAIAAAD9//3/AAADAAAAAAD8//3/AAAEAAAAAAADAPz/AAADAAAAAAAEAPz/AAADAAAAAAAFAP3/AAAAAAAAAAAEAAMAAAAAAAAAAAADAAEAAAAEAAIAAAADAAAAAAACAAAAAAADAP//AAAEAAIAAAADAP7/AAAEAAIAAAD6/wMAAAACAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD+////AAAEAAAAAAD9//z/AAAAAAEAAAABAAQAAAACAAEAAAABAP//AAAFAAAAAAABAAEAAAAFAAEAAAD+/wEAAAAEAAEAAAD9/wEAAAAAAAEAAAACAAEAAAAAAAEAAAD9////AAACAAEAAAACAP//AAACAAEAAAD/////AAABAAAAAAAAAP//AAABAAAAAAD//wQAAAABAAAAAAD+/wQAAAABAAAAAAD9/wQAAAABAAAAAAAAAAQAAAAFAAAAAAABAAUAAAABAAAAAAACAAQAAAAEAAAAAAADAAQAAAABAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAAEAAEAAAD8//z/AAAFAAEAAAD9//v/AAADAAAAAAACAAAAAAAFAAIAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAD9/wAAAAAFAAIAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="6"]
+tile_map_data = PackedByteArray("AAAEAAQAAAAAAAIAAAD8/wMAAAAAAAMAAAD7//z/AAADAAIAAAADAP3/AAACAAMAAAD6/wIAAAADAAIAAAD8//v/AAADAAIAAAD9//7/AAADAAIAAAD8//3/AAADAAIAAAABAAMAAAACAAMAAAACAAUAAAAAAAIAAAAAAAUAAAABAAIAAAD6/wQAAAABAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAADAAAAAAABAAMAAAABAAAAAAADAAMAAAD8/wAAAAADAAMAAAD+/wAAAAABAAMAAAACAP7/AAACAAIAAAAFAP7/AAAAAAIAAAAFAPz/AAACAAIAAAD+//v/AAACAAIAAAD9//3/AAAAAAMAAAD9/wIAAAABAAIAAAA=")
+
+[node name="WinGlow2" parent="Background" instance=ExtResource("3_5e78q")]
+visible = false
+offset_left = -120.0
+offset_top = -160.0
+offset_right = -80.0
+offset_bottom = -120.0
+
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_5rvg2")
+}
+
+[node name="WinArea" parent="." instance=ExtResource("3_53xsp")]
+position = Vector2(516, 344)
+number = 1
+location = Vector2(576, 344)
+
+[node name="CollisionShape2D" parent="WinArea" index="0"]
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_5e78q")
+
+[node name="WinArea2" parent="." instance=ExtResource("3_53xsp")]
+position = Vector2(476, 224)
+number = 2
+location = Vector2(476, 184)
+
+[node name="CollisionShape2D" parent="WinArea2" index="0"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_l4wr6")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("3_s8nj6")]
+position = Vector2(476, 184)
+coin_name = "a"
+
+[node name="Coin2" parent="Coins" instance=ExtResource("3_s8nj6")]
+position = Vector2(756, 224)
+coin_name = "b"
+
+[node name="Coin3" parent="Coins" instance=ExtResource("3_s8nj6")]
+position = Vector2(636, 504)
+coin_name = "c"
+
+[node name="Coin4" parent="Coins" instance=ExtResource("3_s8nj6")]
+position = Vector2(396, 464)
+coin_name = "d"
+
+[node name="Player" parent="." instance=ExtResource("3_vwg62")]
+position = Vector2(576, 344)
+SPEED = 135.0
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Level3Path" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+
+[node name="Level3Path2" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 1
+
+[node name="Level3Path3" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 2
+
+[node name="Level3Path4" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 3
+
+[node name="Level3Path5" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 4
+
+[node name="Level3Path6" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 5
+
+[node name="Level3Path7" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 6
+
+[node name="Level3Path8" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 7
+
+[node name="Level3Path9" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 8
+
+[node name="Level3Path10" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 9
+
+[node name="Level3Path11" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 10
+
+[node name="Level3Path12" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 11
+
+[node name="Level3Path13" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 12
+
+[node name="Level3Path14" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 13
+
+[node name="Level3Path15" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 14
+
+[node name="Level3Path16" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 15
+
+[node name="Level3Path17" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 16
+
+[node name="Level3Path18" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 17
+
+[node name="Level3Path19" parent="Traps" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 18
+
+[node name="Traps2" type="Node2D" parent="."]
+
+[node name="Level3Path" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+
+[node name="Level3Path2" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 1
+
+[node name="Level3Path3" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 2
+
+[node name="Level3Path4" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 3
+
+[node name="Level3Path5" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 4
+
+[node name="Level3Path6" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 5
+
+[node name="Level3Path7" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 6
+
+[node name="Level3Path8" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 7
+
+[node name="Level3Path9" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 8
+
+[node name="Level3Path10" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 9
+
+[node name="Level3Path11" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 10
+
+[node name="Level3Path12" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 11
+
+[node name="Level3Path13" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 12
+
+[node name="Level3Path14" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 13
+
+[node name="Level3Path15" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 14
+
+[node name="Level3Path16" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 15
+
+[node name="Level3Path17" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 16
+
+[node name="Level3Path18" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 17
+
+[node name="Level3Path19" parent="Traps2" instance=ExtResource("6_qf6rc")]
+speed = 0.16
+placement = 18
+
+[editable path="Background"]
+[editable path="WinArea"]
+[editable path="WinArea2"]

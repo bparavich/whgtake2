@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://oeeqtt33gyw1"]
+
+[node name="WinGlow" type="ColorRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.252626, 0.489408, 0.248677, 1)

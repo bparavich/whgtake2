@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsw317nulbdnv"]
+
+[ext_resource type="Texture2D" uid="uid://p30vrso60amp" path="res://Assets/Coin_1.png" id="1_g537i"]
+[ext_resource type="Script" uid="uid://dmd22kjph35yj" path="res://Scripts/coin.gd" id="1_h2p6v"]
+[ext_resource type="Texture2D" uid="uid://cmhsrld6obdge" path="res://Assets/Coin_3.png" id="3_ffmqm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbp07"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_h2p6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g537i"]
+resource_name = "glow"
+length = 6.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffmqm"]
+_data = {
+&"RESET": SubResource("Animation_h2p6v"),
+&"glow": SubResource("Animation_g537i")
+}
+
+[node name="Coin" type="Area2D" groups=["coin"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_h2p6v")
+
+[node name="Main" type="Sprite2D" parent="."]
+scale = Vector2(0.0366133, 0.0366133)
+texture = ExtResource("1_g537i")
+
+[node name="Fade" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.037, 0.037)
+texture = ExtResource("3_ffmqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qbp07")
+
+[node name="GlowAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ffmqm")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

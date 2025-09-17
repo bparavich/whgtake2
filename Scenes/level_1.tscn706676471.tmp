@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm0h40yuv040c"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://b4slti41jwi8b" path="res://Scenes/score_manager.tscn" id="2_6444e"]
+[ext_resource type="PackedScene" uid="uid://elpeu83pwxef" path="res://Scenes/level_2.tscn" id="2_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="6_evi0p"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_7p6j4")
+next_level = ExtResource("2_lsmp6")
+metadata/_edit_vertical_guides_ = [436.0, 716.0, 431.0, 721.0]
+metadata/_edit_horizontal_guides_ = [264.0, 304.0, 344.0, 384.0, 424.0]
+
+[node name="ScoreManager" parent="." instance=ExtResource("2_6444e")]
+
+[node name="Background" parent="." instance=ExtResource("1_8ffim")]
+position = Vector2(576, 324)
+
+[node name="Player" parent="." instance=ExtResource("2_xfk5q")]
+position = Vector2(755, 228)
+SPEED = 130.0
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Trap" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(428, 264)
+animation = "right_then_back"
+
+[node name="Trap2" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(428, 344)
+animation = "right_then_back"
+
+[node name="Trap3" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(428, 424)
+animation = "right_then_back"
+
+[node name="Trap4" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(724, 304)
+animation = "left_then_right"
+
+[node name="Trap5" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(724, 384)
+animation = "left_then_right"
+
+[node name="WinArea" parent="." instance=ExtResource("6_evi0p")]
+position = Vector2(796, 225)

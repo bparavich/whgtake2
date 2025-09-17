@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://duhlnm7quyilm"]
+
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="1_dmk5u"]
+[ext_resource type="Script" uid="uid://bpy4mq0dcxq3d" path="res://Scripts/level_4_spin_trap.gd" id="1_x78jo"]
+
+[sub_resource type="Animation" id="Animation_twnyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x78jo"]
+resource_name = "spin"
+length = 4.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mpfts"]
+_data = {
+&"RESET": SubResource("Animation_twnyq"),
+&"spin": SubResource("Animation_x78jo")
+}
+
+[node name="Level4SpinTrap" type="Node2D"]
+script = ExtResource("1_x78jo")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Trap" parent="Node2D" instance=ExtResource("1_dmk5u")]
+
+[node name="Trap2" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -20)
+
+[node name="Trap3" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -40)
+
+[node name="Trap4" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -60)
+
+[node name="Trap5" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -80)
+
+[node name="Trap6" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -100)
+
+[node name="Trap7" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -120)
+
+[node name="Trap8" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, -140)
+
+[node name="Trap9" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(20, 0)
+
+[node name="Trap10" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(40, 0)
+
+[node name="Trap11" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(60, 0)
+
+[node name="Trap12" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(80, 0)
+
+[node name="Trap13" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(100, 0)
+
+[node name="Trap14" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(120, 0)
+
+[node name="Trap15" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(140, 0)
+
+[node name="Trap16" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 20)
+
+[node name="Trap17" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 40)
+
+[node name="Trap18" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 60)
+
+[node name="Trap19" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 80)
+
+[node name="Trap20" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 100)
+
+[node name="Trap21" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 120)
+
+[node name="Trap22" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(0, 140)
+
+[node name="Trap23" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-20, 0)
+
+[node name="Trap24" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-40, 0)
+
+[node name="Trap25" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-60, 0)
+
+[node name="Trap26" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-80, 0)
+
+[node name="Trap27" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-100, 0)
+
+[node name="Trap28" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-120, 0)
+
+[node name="Trap29" parent="Node2D" instance=ExtResource("1_dmk5u")]
+position = Vector2(-140, 0)
+
+[node name="TrapAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mpfts")
+}
+autoplay = "spin"

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm0h40yuv040c"]
+
+[ext_resource type="Script" uid="uid://bcb8v6ece6n6v" path="res://Scripts/game_manager.gd" id="1_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="2_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="3_xfk5q"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_7p6j4")
+metadata/_edit_vertical_guides_ = [436.0, 716.0, 431.0, 721.0]
+metadata/_edit_horizontal_guides_ = [264.0, 304.0, 344.0, 384.0, 424.0]
+
+[node name="Background" parent="." instance=ExtResource("1_8ffim")]
+position = Vector2(576, 324)
+
+[node name="Player" parent="." instance=ExtResource("2_xfk5q")]
+position = Vector2(310, 327)
+SPEED = 130.0
+
+[node name="Traps" type="Node2D" parent="."]
+position = Vector2(431, 264)
+
+[node name="Trap" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(-3, 0)
+animation = "right_then_back"
+
+[node name="Trap2" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(-3, 80)
+animation = "right_then_back"
+
+[node name="Trap3" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(-3, 160)
+animation = "right_then_back"
+
+[node name="Trap4" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(293, 40)
+animation = "left_then_right"
+
+[node name="Trap5" parent="Traps" instance=ExtResource("3_xfk5q")]
+position = Vector2(293, 120)
+animation = "left_then_right"

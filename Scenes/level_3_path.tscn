@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ucl80rxle6iu"]
+
+[ext_resource type="Script" uid="uid://c43x0bnrac5au" path="res://Scripts/path_3.gd" id="1_bhybi"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="2_ae4k8"]
+
+[sub_resource type="Curve2D" id="Curve2D_qf6rc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 436, 224, 0, 0, 0, 0, 717, 224, 0, 0, 0, 0, 717, 464, 0, 0, 0, 0, 436, 464, 0, 0, 0, 0, 437, 222)
+}
+point_count = 5
+
+[node name="Level3Path" type="Path2D"]
+curve = SubResource("Curve2D_qf6rc")
+script = ExtResource("1_bhybi")
+speed = 0.08
+metadata/_edit_vertical_guides_ = [446.0]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(436, 224)
+
+[node name="Trap" parent="PathFollow2D" instance=ExtResource("2_ae4k8")]

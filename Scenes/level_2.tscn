@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=4 uid="uid://elpeu83pwxef"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="1_v3rpw"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="2_smnlx"]
+[ext_resource type="PackedScene" uid="uid://g2o77e22hkaq" path="res://Scenes/level_3.tscn" id="2_v36qu"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="4_v36qu"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="6_cggpd"]
+[ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="7_055b2"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_1q6tm")
+score_required = 9
+next_level = ExtResource("2_v36qu")
+
+[node name="Background" parent="." instance=ExtResource("1_v3rpw")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="2"]
+tile_map_data = PackedByteArray("AAD/////AgABAAAAAAAAAAAAAgABAAAAAAAAAP7/AgABAAAAAAD//wEAAgABAAAAAAD+/wAAAgABAAAAAAD9/wEAAgABAAAAAAD8/wAAAgABAAAAAAD8//7/AgABAAAAAAD9////AgABAAAAAAD+//7/AgABAAAAAAABAP//AgABAAAAAAACAP7/AgABAAAAAAADAP//AgABAAAAAAACAAAAAgABAAAAAAABAAEAAgABAAAAAAADAAEAAgABAAAAAAAAAAEAAgACAAAAAAD//wAAAgACAAAAAAD///7/AgACAAAAAAD9//7/AgACAAAAAAD8////AgACAAAAAAD8/wEAAgACAAAAAAD9/wAAAgACAAAAAAD+////AgACAAAAAAD+/wEAAgACAAAAAAAAAP//AgACAAAAAAABAP7/AgACAAAAAAADAP7/AgACAAAAAAACAP//AgACAAAAAAABAAAAAgACAAAAAAACAAEAAgACAAAAAAADAAAAAgACAAAAAAD+/wIAAgABAAAAAAD8/wIAAgABAAAAAAAAAAIAAgABAAAAAAACAAIAAgABAAAAAAADAAIAAgACAAAAAAABAAIAAgACAAAAAAD//wIAAgACAAAAAAD9/wIAAgACAAAAAAADAP3/AgABAAAAAAD7/wMAAgABAAAAAAD8/wMAAgACAAAAAAAEAP3/AgACAAAAAAAFAAAAAgACAAAAAAAHAP//AgAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAP//AgAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAgAAAAAAAAD6/wAAAgABAAAAAAD4////AgAAAAAAAAD4/wAAAgAAAAAAAAD4/wEAAgAAAAAAAAD5/wEAAgAAAAAAAAD5/wAAAgAAAAAAAAD5////AgAAAAAAAAD///3/AgABAAAAAAD//wMAAgABAAAAAAABAAMAAgABAAAAAAADAAMAAgABAAAAAAD9/wMAAgABAAAAAAAEAAMAAgACAAAAAAACAAMAAgACAAAAAAAAAAMAAgACAAAAAAD+/wMAAgACAAAAAAD7/wIAAgACAAAAAAD7/wAAAgACAAAAAAD7//7/AgACAAAAAAD8//3/AgACAAAAAAD+//3/AgACAAAAAAAAAP3/AgACAAAAAAAEAAEAAgACAAAAAAACAP3/AgACAAAAAAAEAP//AgACAAAAAAAEAAIAAgABAAAAAAAEAAAAAgABAAAAAAAEAP7/AgABAAAAAAABAP3/AgABAAAAAAD9//3/AgABAAAAAAD7//3/AgABAAAAAAD7////AgABAAAAAAD7/wEAAgABAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="3"]
+offset_left = 240.0
+offset_top = -40.0
+offset_bottom = 80.0
+
+[node name="StartGlow" parent="Background" index="4"]
+offset_top = -40.0
+offset_right = -240.0
+offset_bottom = 80.0
+
+[node name="TileMapLayer" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAAFAAMAAAAAAAAAAAD6//3/AAACAAAAAAADAP3/AAABAAAAAAD4/wIAAAABAAAAAAD4/wEAAAAEAAEAAAD4/wAAAAAAAAAAAAD4////AAAEAAAAAAD4//7/AAADAAAAAAAFAP7/AAAAAAAAAAAFAP//AAACAAEAAAAFAAAAAAAFAAIAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAD7//3/AAAEAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAAEAP7/AAACAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD7/wMAAAAEAAEAAAAEAP3/AAAFAAAAAAAEAP//AAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAADAAMAAAADAAAAAAACAP3/AAABAAAAAAABAP3/AAABAAAAAAAAAP3/AAABAAAAAAD///3/AAABAAAAAAD+//3/AAABAAAAAAD9//3/AAABAAAAAAD8//3/AAABAAAAAAADAPz/AAADAAAAAAAEAPz/AAADAAAAAAAFAP3/AAAAAAAAAAAHAP7/AAADAAAAAAAHAP//AAAFAAAAAAAHAAAAAAACAAAAAAAHAAEAAAAFAAEAAAAHAAIAAAABAAAAAAAEAAMAAAAFAAEAAAD6/wMAAAACAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD3/wEAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAD6//7/AAACAAAAAAD6////AAACAAEAAAD6/wAAAAAFAAIAAAD6/wEAAAAAAAEAAAD6/wIAAAACAAAAAAAGAP//AAAEAAAAAAD5////AAAFAAAAAAD5/wEAAAAFAAEAAAAGAAEAAAAEAAEAAAD9/wQAAAABAAAAAAD+/wQAAAABAAAAAAD//wQAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAGAAIAAAABAAAAAAD5/wIAAAABAAAAAAAGAP7/AAADAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAADAAAAAAD9//z/AAADAAAAAAD8//z/AAADAAAAAAD7//z/AAADAAAAAAD5//7/AAADAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="6"]
+tile_map_data = PackedByteArray("AAAFAAQAAAAAAAIAAAAIAAIAAAAAAAIAAAD6/wIAAAAAAAIAAAD7/wAAAAABAAMAAAAGAAAAAAABAAMAAAD3/wIAAAABAAIAAAD5/wAAAAADAAMAAAAEAAAAAAADAAMAAAAFAAIAAAABAAIAAAD6/wQAAAABAAIAAAAFAPz/AAACAAIAAAAIAP7/AAACAAIAAAD6//7/AAACAAIAAAD3//7/AAADAAIAAAD6//z/AAADAAIAAAAFAP7/AAADAAIAAAA=")
+
+[node name="WinArea" parent="." instance=ExtResource("2_smnlx")]
+position = Vector2(836, 344)
+number = 1
+
+[node name="Player" parent="." instance=ExtResource("4_v36qu")]
+position = Vector2(298, 342)
+SPEED = 135.0
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(556, 324)
+glow_delay = 0.8
+
+[node name="Coin2" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(576, 324)
+glow_delay = 2.0
+
+[node name="Coin3" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(596, 324)
+glow_delay = 1.2
+
+[node name="Coin4" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(556, 344)
+glow_delay = 2.11
+
+[node name="Coin5" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(576, 344)
+glow_delay = 3.0
+
+[node name="Coin6" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(596, 344)
+glow_delay = 0.3
+
+[node name="Coin7" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(556, 364)
+glow_delay = 0.651
+
+[node name="Coin8" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(576, 364)
+glow_delay = 0.198
+
+[node name="Coin9" parent="Coins" instance=ExtResource("7_055b2")]
+position = Vector2(596, 364)
+glow_delay = 1.5
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Trap" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(396, 216)
+animation = "level_2_down"
+
+[node name="Trap2" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(436, 472)
+animation = "level_2_up"
+
+[node name="Trap3" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(476, 216)
+animation = "level_2_down"
+
+[node name="Trap4" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(516, 472)
+animation = "level_2_up"
+
+[node name="Trap5" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(556, 216)
+animation = "level_2_down"
+
+[node name="Trap6" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(596, 472)
+animation = "level_2_up"
+
+[node name="Trap7" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(636, 216)
+animation = "level_2_down"
+
+[node name="Trap8" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(676, 472)
+animation = "level_2_up"
+
+[node name="Trap9" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(716, 216)
+animation = "level_2_down"
+
+[node name="Trap10" parent="Traps" instance=ExtResource("6_cggpd")]
+position = Vector2(756, 472)
+animation = "level_2_up"
+
+[editable path="Background"]
