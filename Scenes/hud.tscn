@@ -1,0 +1,191 @@
+[gd_scene load_steps=7 format=3 uid="uid://7vq00vektkw4"]
+
+[ext_resource type="Script" uid="uid://jqrs87i7vv41" path="res://Scripts/hud.gd" id="1_e0onf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gfia"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0onf"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_fccik"]
+font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0onf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fccik"]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_e0onf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 54.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 594.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Level" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_right = 0.16900001
+anchor_bottom = 0.085
+offset_left = -0.12800026
+offset_top = -3.0
+offset_right = 0.3119812
+offset_bottom = -3.0800018
+text = "LEVEL:"
+label_settings = SubResource("LabelSettings_3gfia")
+
+[node name="Score" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39100003
+anchor_top = 0.009000001
+anchor_right = 0.609
+anchor_bottom = 0.094000004
+offset_left = 0.56796265
+offset_top = -7.8320003
+offset_right = -0.5680542
+offset_bottom = -7.9120026
+grow_horizontal = 2
+text = "COINS:"
+label_settings = SubResource("LabelSettings_e0onf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Deaths" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78400004
+anchor_top = 0.008
+anchor_right = 0.99000007
+anchor_bottom = 0.093
+offset_left = -0.16802979
+offset_top = -8.184
+offset_right = -0.48010254
+offset_bottom = -8.264
+grow_horizontal = 0
+text = "FAILS: 0"
+label_settings = SubResource("LabelSettings_fccik")
+horizontal_alignment = 2
+
+[node name="PauseMenu" type="Button" parent="UI"]
+process_mode = 3
+layout_mode = 0
+offset_left = 11.0
+offset_top = 590.0
+offset_right = 269.0
+offset_bottom = 649.0
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0.87157345, 0.867408, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 37
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e0onf")
+text = "PAUSE/MENU"
+flat = true
+alignment = 0
+
+[node name="UN" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 964.0
+offset_top = 587.0
+offset_right = 1025.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "UN"
+
+[node name="UNColor" type="Control" parent="UI"]
+anchors_preset = 0
+offset_left = 966.0
+offset_top = 605.0
+offset_right = 1135.0
+offset_bottom = 636.0
+
+[node name="Mute" type="Button" parent="UI/UNColor"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -17.0
+offset_right = 175.0
+offset_bottom = 46.0
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(0.87058824, 0.8666667, 0, 1)
+theme_override_colors/font_hover_color = Color(0.87058824, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fccik")
+text = "MUTE"
+flat = true
+alignment = 2
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.60784316)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 158.0
+offset_right = 704.0
+offset_bottom = 215.0
+theme_override_colors/font_hover_color = Color(0.87058824, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "RESUME GAME"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 241.0
+offset_right = 684.0
+offset_bottom = 298.0
+theme_override_colors/font_hover_color = Color(0.87058824, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "MAIN MENU"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 325.0
+offset_right = 694.0
+offset_bottom = 382.0
+theme_override_colors/font_hover_color = Color(0.87058824, 0.8666667, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "LEVEL SELECT"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="UI/PauseMenu" to="." method="_on_pause_menu_pressed"]
+[connection signal="mouse_entered" from="UI/UNColor" to="." method="change_un_color_yellow"]
+[connection signal="mouse_exited" from="UI/UNColor" to="." method="change_un_color_white"]
+[connection signal="pressed" from="UI/UNColor/Mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="PauseMenu/Button" to="." method="_on_pause_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Button2" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Button3" to="." method="_on_level_select_pressed"]

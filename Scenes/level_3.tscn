@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://g2o77e22hkaq"]
+[gd_scene load_steps=15 format=4 uid="uid://g2o77e22hkaq"]
 
 [ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_ng0s0"]
 [ext_resource type="PackedScene" uid="uid://be8fo6ccf13b6" path="res://Scenes/level_4.tscn" id="2_5e78q"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="3_s8nj6"]
 [ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="3_vwg62"]
 [ext_resource type="PackedScene" uid="uid://ucl80rxle6iu" path="res://Scenes/level_3_path.tscn" id="6_qf6rc"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="9_l4wr6"]
 
 [sub_resource type="Animation" id="Animation_l4wr6"]
 length = 0.001
@@ -55,6 +56,7 @@ size = Vector2(40, 40)
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_ng0s0")
+level = 3
 score_required = 4
 next_level = ExtResource("2_5e78q")
 has_checkpoint = true
@@ -62,25 +64,25 @@ has_checkpoint = true
 [node name="Background" parent="." instance=ExtResource("2_76ybr")]
 position = Vector2(576, 324)
 
-[node name="floor" parent="Background" index="2"]
+[node name="floor" parent="Background" index="1"]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAAAAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wAAAgAAAAAAAAD8/wAAAgABAAAAAAD8//7/AgABAAAAAAABAP//AgAAAAAAAAADAP//AgABAAAAAAACAAAAAgABAAAAAAABAAEAAgAAAAAAAAADAAEAAgABAAAAAAAAAAEAAgAAAAAAAAD//wAAAgAAAAAAAAD8////AgACAAAAAAD8/wEAAgACAAAAAAD9/wAAAgACAAAAAAD+////AgAAAAAAAAD+/wEAAgAAAAAAAAAAAP//AgAAAAAAAAADAP7/AgACAAAAAAABAAAAAgAAAAAAAAADAAAAAgACAAAAAAD8/wIAAgABAAAAAAADAAIAAgACAAAAAAADAP3/AgABAAAAAAD7/wMAAgABAAAAAAD8/wMAAgACAAAAAAAEAP3/AgACAAAAAAD8//3/AgACAAAAAAD+//3/AgACAAAAAAAAAP3/AgACAAAAAAACAP3/AgACAAAAAAACAAMAAgACAAAAAAABAAQAAgACAAAAAAAAAAMAAgACAAAAAAD+/wMAAgACAAAAAAD9//3/AgABAAAAAAD///3/AgABAAAAAAABAP3/AgABAAAAAAADAAMAAgABAAAAAAABAAMAAgABAAAAAAD9/wMAAgABAAAAAAD//wMAAgABAAAAAAD9//z/AgAAAAAAAAA=")
 
-[node name="WinGlow" parent="Background" index="3"]
+[node name="WinGlow" parent="Background" index="2"]
 offset_left = -80.0
 offset_top = -40.0
 offset_right = 80.0
 offset_bottom = 80.0
 
-[node name="StartGlow" parent="Background" index="4"]
+[node name="StartGlow" parent="Background" index="3"]
 offset_left = -80.0
 offset_top = -40.0
 offset_right = 80.0
 offset_bottom = 80.0
 
-[node name="TileMapLayer" parent="Background" index="5"]
+[node name="TileMapLayer" parent="Background" index="4"]
 tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD8//7/AAAEAAIAAAADAAIAAAAEAAIAAAADAP3/AAABAAAAAAD8////AAAEAAIAAAD8/wAAAAAAAAAAAAD8/wEAAAAEAAIAAAD8/wIAAAAEAAIAAAD7//3/AAACAAAAAAD9//7/AAAEAAAAAAD+//7/AAAFAAIAAAD///7/AAAFAAIAAAAAAP7/AAAFAAIAAAABAP7/AAAFAAIAAAACAP7/AAAFAAAAAAD9/wMAAAAFAAIAAAD+/wMAAAAFAAIAAAD//wMAAAAFAAIAAAAAAAMAAAAFAAIAAAABAAMAAAABAAAAAAACAAMAAAAFAAIAAAAEAP7/AAAEAAAAAAD7/wIAAAAFAAEAAAD7/wEAAAACAAAAAAD7/wAAAAACAAAAAAD7////AAACAAAAAAD7//7/AAACAAAAAAD7/wMAAAABAAEAAAAEAP3/AAADAAEAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAMAAAAFAAEAAAD9/wIAAAAEAAEAAAD+/wIAAAAFAAIAAAD//wIAAAAFAAIAAAAAAAIAAAAFAAIAAAABAAIAAAAFAAIAAAACAAIAAAAFAAEAAAACAP3/AAAFAAIAAAABAP3/AAAFAAIAAAAAAP3/AAAFAAIAAAD///3/AAAFAAIAAAD+//3/AAAFAAIAAAD9//3/AAADAAAAAAD8//3/AAAEAAAAAAADAPz/AAADAAAAAAAEAPz/AAADAAAAAAAFAP3/AAAAAAAAAAAEAAMAAAAAAAAAAAADAAEAAAAEAAIAAAADAAAAAAACAAAAAAADAP//AAAEAAIAAAADAP7/AAAEAAIAAAD6/wMAAAACAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD+////AAAEAAAAAAD9//z/AAAAAAEAAAABAAQAAAACAAEAAAABAP//AAAFAAAAAAABAAEAAAAFAAEAAAD+/wEAAAAEAAEAAAD9/wEAAAAAAAEAAAACAAEAAAAAAAEAAAD9////AAACAAEAAAACAP//AAACAAEAAAD/////AAABAAAAAAAAAP//AAABAAAAAAD//wQAAAABAAAAAAD+/wQAAAABAAAAAAD9/wQAAAABAAAAAAAAAAQAAAAFAAAAAAABAAUAAAABAAAAAAACAAQAAAAEAAAAAAADAAQAAAABAAAAAAACAPz/AAADAAAAAAABAPz/AAADAAAAAAAAAPz/AAADAAAAAAD///z/AAADAAAAAAD+//z/AAAEAAEAAAD8//z/AAAFAAEAAAD9//v/AAADAAAAAAACAAAAAAAFAAIAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAD9/wAAAAAFAAIAAAA=")
 
-[node name="TileMapLayer2" parent="Background" index="6"]
+[node name="TileMapLayer2" parent="Background" index="5"]
 tile_map_data = PackedByteArray("AAAEAAQAAAAAAAIAAAD8/wMAAAAAAAMAAAD7//z/AAADAAIAAAADAP3/AAACAAMAAAD6/wIAAAADAAIAAAD8//v/AAADAAIAAAD9//7/AAADAAIAAAD8//3/AAADAAIAAAABAAMAAAACAAMAAAACAAUAAAAAAAIAAAAAAAUAAAABAAIAAAD6/wQAAAABAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAADAAAAAAABAAMAAAABAAAAAAADAAMAAAD8/wAAAAADAAMAAAD+/wAAAAABAAMAAAACAP7/AAACAAIAAAAFAP7/AAAAAAIAAAAFAPz/AAACAAIAAAD+//v/AAACAAIAAAD9//3/AAAAAAMAAAD9/wIAAAABAAIAAAA=")
 
 [node name="WinGlow2" parent="Background" instance=ExtResource("3_5e78q")]
@@ -134,6 +136,7 @@ coin_name = "d"
 [node name="Player" parent="." instance=ExtResource("3_vwg62")]
 position = Vector2(576, 344)
 SPEED = 135.0
+alive = true
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -288,6 +291,8 @@ placement = 17
 [node name="Level3Path19" parent="Traps2" instance=ExtResource("6_qf6rc")]
 speed = 0.16
 placement = 18
+
+[node name="HUD" parent="." instance=ExtResource("9_l4wr6")]
 
 [editable path="Background"]
 [editable path="WinArea"]

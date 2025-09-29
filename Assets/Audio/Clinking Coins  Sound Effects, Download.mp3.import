@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b362l3ujhr22t"
+path="res://.godot/imported/Clinking Coins  Sound Effects, Download.mp3-9cb9d28dcdf2b65e065767de320a387b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Clinking Coins  Sound Effects, Download.mp3"
+dest_files=["res://.godot/imported/Clinking Coins  Sound Effects, Download.mp3-9cb9d28dcdf2b65e065767de320a387b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

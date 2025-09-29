@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsw317nulbdnv"]
+[gd_scene load_steps=9 format=3 uid="uid://dsw317nulbdnv"]
 
-[ext_resource type="Texture2D" uid="uid://p30vrso60amp" path="res://Assets/Coin_1.png" id="1_g537i"]
+[ext_resource type="Texture2D" uid="uid://p30vrso60amp" path="res://Assets/Textures/Coin_1.png" id="1_g537i"]
 [ext_resource type="Script" uid="uid://dmd22kjph35yj" path="res://Scripts/coin.gd" id="1_h2p6v"]
-[ext_resource type="Texture2D" uid="uid://cmhsrld6obdge" path="res://Assets/Coin_3.png" id="3_ffmqm"]
+[ext_resource type="Texture2D" uid="uid://cmhsrld6obdge" path="res://Assets/Textures/Coin_3.png" id="3_ffmqm"]
+[ext_resource type="AudioStream" uid="uid://b362l3ujhr22t" path="res://Assets/Audio/Clinking Coins  Sound Effects, Download.mp3" id="4_h2p6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qbp07"]
 radius = 8.0
@@ -67,5 +68,10 @@ shape = SubResource("CircleShape2D_qbp07")
 libraries = {
 &"": SubResource("AnimationLibrary_ffmqm")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h2p6v")
+volume_db = -16.095
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

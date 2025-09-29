@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://bum3qn8v1ep1i"]
+
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="1_51i83"]
+[ext_resource type="Script" uid="uid://cwwismxsdg7nl" path="res://Scripts/level_5_trap.gd" id="1_xcvin"]
+
+[sub_resource type="Animation" id="Animation_xcvin"]
+resource_name = "inner_rotation"
+length = 4.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_tb1ja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Inner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmuct"]
+_data = {
+&"RESET": SubResource("Animation_tb1ja"),
+&"inner_rotation": SubResource("Animation_xcvin")
+}
+
+[sub_resource type="Animation" id="Animation_cond1"]
+resource_name = "outer_rotation"
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_nmuct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aagw3"]
+_data = {
+&"RESET": SubResource("Animation_nmuct"),
+&"outer_rotation": SubResource("Animation_cond1")
+}
+
+[node name="Level5Trap" type="Node2D"]
+rotation = 6.2831855
+script = ExtResource("1_xcvin")
+
+[node name="Outer" type="Node2D" parent="."]
+
+[node name="Trap2" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(-120, 6.9938224e-06)
+
+[node name="Trap3" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(-200, 1.3987645e-05)
+
+[node name="Trap4" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(-280, 2.0981468e-05)
+
+[node name="Trap6" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(120, -1.0490734e-05)
+
+[node name="Trap7" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(200, -1.7484555e-05)
+
+[node name="Trap8" parent="Outer" instance=ExtResource("1_51i83")]
+position = Vector2(280, -2.4478377e-05)
+
+[node name="Inner" type="Node2D" parent="."]
+
+[node name="Trap" parent="Inner" instance=ExtResource("1_51i83")]
+position = Vector2(-40, 0)
+
+[node name="Trap5" parent="Inner" instance=ExtResource("1_51i83")]
+position = Vector2(40, -3.4969112e-06)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nmuct")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_aagw3")
+}

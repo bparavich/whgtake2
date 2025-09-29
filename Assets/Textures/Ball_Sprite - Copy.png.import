@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5xd6ojbt82v"
-path="res://.godot/imported/wall_tile_layer.png-2eab6021fa55aba025a6ee2ef39d6170.ctex"
+uid="uid://dwrmyjeli3uu0"
+path="res://.godot/imported/Ball_Sprite - Copy.png-596d40b68072b5b9aa90e064ed278821.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wall_tile_layer.png"
-dest_files=["res://.godot/imported/wall_tile_layer.png-2eab6021fa55aba025a6ee2ef39d6170.ctex"]
+source_file="res://Assets/Textures/Ball_Sprite - Copy.png"
+dest_files=["res://.godot/imported/Ball_Sprite - Copy.png-596d40b68072b5b9aa90e064ed278821.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

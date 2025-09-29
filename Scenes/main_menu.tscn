@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://bi3upusydnj2l"]
+
+[ext_resource type="Texture2D" uid="uid://54hydbjk01cl" path="res://Assets/Textures/Untitled-1.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://dlgpf6ligvqm7" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cegtcybkkekif" path="res://Assets/Textures/play1.png" id="2_ce3w2"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_opfnp"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://bpixvpeh68ksa" path="res://Assets/Textures/level1.png" id="3_n45e2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp0ys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="Background" parent="." instance=ExtResource("2_opfnp")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="2"]
+visible = false
+
+[node name="TileMapLayer" parent="Background" index="5"]
+visible = false
+
+[node name="TileMapLayer2" parent="Background" index="6"]
+visible = false
+
+[node name="PlayGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 359.0
+offset_right = 496.0
+offset_bottom = 522.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n45e2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_opfnp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ce3w2")
+icon = ExtResource("2_ce3w2")
+
+[node name="LevelSelect" type="Button" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 359.0
+offset_right = 852.0
+offset_bottom = 522.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cp0ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yhxw7")
+icon = ExtResource("3_n45e2")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 58.0
+offset_right = 1896.0
+offset_bottom = 498.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_28flt")
+
+[node name="HUD" parent="." instance=ExtResource("3_cp0ys")]
+
+[node name="UI" parent="HUD" index="0"]
+mouse_filter = 2
+
+[node name="Level" parent="HUD/UI" index="0"]
+visible = false
+
+[node name="Score" parent="HUD/UI" index="1"]
+visible = false
+
+[node name="Deaths" parent="HUD/UI" index="2"]
+visible = false
+
+[node name="PauseMenu" parent="HUD/UI" index="3"]
+visible = false
+
+[connection signal="pressed" from="PlayGame" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
+
+[editable path="Background"]
+[editable path="HUD"]

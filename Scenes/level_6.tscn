@@ -1,0 +1,162 @@
+[gd_scene load_steps=13 format=4 uid="uid://dd2oh0bankokd"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_gqpvc"]
+[ext_resource type="PackedScene" uid="uid://cbj0yfmm5obj4" path="res://Scenes/level_7.tscn" id="2_b33os"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="2_rkygx"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="3_b33os"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="4_546p8"]
+[ext_resource type="PackedScene" uid="uid://oeeqtt33gyw1" path="res://Scenes/win_glow.tscn" id="5_546p8"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="5_vu5tt"]
+[ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="6_cnikc"]
+[ext_resource type="PackedScene" uid="uid://cy2tntsdj4jj4" path="res://Scenes/level_6_trap.tscn" id="8_b33os"]
+
+[sub_resource type="Animation" id="Animation_546p8"]
+resource_name = "win_glow"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vu5tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnikc"]
+_data = {
+&"RESET": SubResource("Animation_vu5tt"),
+&"win_glow": SubResource("Animation_546p8")
+}
+
+[node name="Level6" type="Node2D"]
+script = ExtResource("1_gqpvc")
+level = 6
+score_required = 4
+next_level = ExtResource("2_b33os")
+has_checkpoint = true
+metadata/_edit_vertical_guides_ = [296.0, 856.0]
+metadata/_edit_horizontal_guides_ = [244.0, 324.0]
+
+[node name="HUD" parent="." instance=ExtResource("2_rkygx")]
+
+[node name="Background" parent="." instance=ExtResource("3_b33os")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="1"]
+tile_map_data = PackedByteArray("AAAAAAAAAgACAAAAAAAAAP7/AgACAAAAAAD//wEAAgACAAAAAAD9/wEAAgACAAAAAAD8/wAAAgACAAAAAAD8//7/AgACAAAAAAD+//7/AgACAAAAAAACAP7/AgACAAAAAAABAAEAAgACAAAAAAADAAEAAgACAAAAAAAAAAEAAgABAAAAAAD///7/AgABAAAAAAD9//7/AgABAAAAAAD8/wEAAgABAAAAAAD+/wEAAgABAAAAAAABAP7/AgABAAAAAAADAP7/AgABAAAAAAACAAEAAgABAAAAAAD+/wIAAgACAAAAAAD8/wIAAgACAAAAAAAAAAIAAgACAAAAAAACAAIAAgACAAAAAAADAAIAAgABAAAAAAABAAIAAgABAAAAAAD//wIAAgABAAAAAAD9/wIAAgABAAAAAAADAP3/AgACAAAAAAD7/wMAAgACAAAAAAD8/wMAAgABAAAAAAAEAP3/AgABAAAAAAAFAP3/AgACAAAAAAAHAP3/AgACAAAAAAAGAP3/AgABAAAAAAAFAP7/AgABAAAAAAAFAAEAAgACAAAAAAAFAAIAAgABAAAAAAAFAAMAAgACAAAAAAAGAAMAAgABAAAAAAAHAAMAAgACAAAAAAAHAP7/AgABAAAAAAAHAP//AgAAAAAAAAAHAAAAAgAAAAAAAAAHAAEAAgACAAAAAAAHAAIAAgABAAAAAAAGAP7/AgACAAAAAAAGAP//AgAAAAAAAAAGAAAAAgAAAAAAAAAGAAEAAgABAAAAAAAGAAIAAgACAAAAAAD6/wMAAgABAAAAAAD6/wIAAgACAAAAAAD6/wEAAgABAAAAAAD6//7/AgACAAAAAAD6//3/AgABAAAAAAD5//3/AgAAAAAAAAD4//3/AgAAAAAAAAD4//7/AgAAAAAAAAD4/wAAAgACAAAAAAD4/wEAAgABAAAAAAD4/wIAAgACAAAAAAD4/wMAAgABAAAAAAD5/wMAAgACAAAAAAD5/wIAAgABAAAAAAD5/wEAAgACAAAAAAD5//7/AgAAAAAAAAAAAPz/AgACAAAAAAAEAAAAAgACAAAAAAD7//3/AgACAAAAAAD8//z/AgACAAAAAAD9//v/AgACAAAAAAD///v/AgACAAAAAAABAPv/AgACAAAAAAADAPv/AgACAAAAAAAFAPv/AgACAAAAAAAHAPv/AgACAAAAAAAGAPz/AgACAAAAAAAGAAQAAgACAAAAAAD4/wQAAgACAAAAAAD7/wEAAgACAAAAAAD6/wQAAgACAAAAAAD8/wQAAgACAAAAAAD9/wMAAgACAAAAAAAEAAIAAgACAAAAAAAEAAQAAgACAAAAAAADAAMAAgACAAAAAAACAAQAAgACAAAAAAABAAMAAgACAAAAAAAAAAQAAgACAAAAAAD//wMAAgACAAAAAAD+/wQAAgACAAAAAAD7/wIAAgABAAAAAAD5/wQAAgABAAAAAAD7/wQAAgABAAAAAAD+/wMAAgABAAAAAAD9/wQAAgABAAAAAAD//wQAAgABAAAAAAAAAAMAAgABAAAAAAABAAQAAgABAAAAAAACAAMAAgABAAAAAAAEAAMAAgABAAAAAAAEAAEAAgABAAAAAAADAAQAAgABAAAAAAAFAAQAAgABAAAAAAAHAAQAAgABAAAAAAD7//7/AgABAAAAAAD8//3/AgABAAAAAAD9//z/AgABAAAAAAD+//3/AgABAAAAAAD///z/AgABAAAAAAAAAP3/AgABAAAAAAABAPz/AgABAAAAAAACAP3/AgABAAAAAAADAPz/AgABAAAAAAAFAPz/AgABAAAAAAAHAPz/AgABAAAAAAAGAPv/AgABAAAAAAAEAP7/AgACAAAAAAAEAPz/AgACAAAAAAACAPz/AgACAAAAAAABAP3/AgACAAAAAAD///3/AgACAAAAAAD9//3/AgACAAAAAAD+//z/AgACAAAAAAAEAPv/AgABAAAAAAACAPv/AgABAAAAAAAAAPv/AgABAAAAAAD+//v/AgABAAAAAAD8//v/AgABAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="2"]
+offset_left = -320.0
+offset_top = -120.0
+offset_right = -240.0
+offset_bottom = -40.0
+
+[node name="StartGlow" parent="Background" index="3"]
+offset_bottom = -40.0
+
+[node name="TileMapLayer" parent="Background" index="4"]
+tile_map_data = PackedByteArray("AAD4/wMAAAAAAAAAAAD4//3/AAAEAAAAAAD8//7/AAADAAAAAAD6//3/AAABAAAAAAAHAP3/AAACAAAAAAAHAAMAAAACAAAAAAD4/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wAAAAAAAAEAAAD4////AAAFAAIAAAD4//7/AAAEAAEAAAD8////AAAFAAIAAAD8/wAAAAAAAAEAAAAFAP7/AAADAAAAAAAFAP//AAAFAAAAAAAFAAAAAAACAAEAAAAFAAEAAAABAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAP3/AAAAAAAAAAD7//3/AAABAAAAAAD5//3/AAABAAAAAAD9//7/AAADAAAAAAD+//7/AAADAAAAAAD///7/AAADAAAAAAAAAP7/AAADAAAAAAABAP7/AAADAAAAAAACAP7/AAADAAAAAAAEAP7/AAADAAAAAAD7/wEAAAABAAAAAAD7/wAAAAAFAAEAAAD7////AAABAAAAAAD7//7/AAADAAAAAAAEAP//AAAFAAIAAAAEAAAAAAAAAAEAAAAHAPz/AAACAAAAAAAHAP7/AAACAAAAAAAHAP//AAACAAAAAAAHAAAAAAACAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAGAAQAAAADAAAAAAAFAAQAAAADAAAAAAAHAAQAAAAFAAEAAAADAAEAAAABAAAAAAADAAAAAAAFAAEAAAADAP//AAABAAAAAAADAP7/AAADAAAAAAD4/wQAAAAEAAEAAAD5/wQAAAADAAAAAAD6/wQAAAADAAAAAAD7/wQAAAADAAAAAAD8/wQAAAADAAAAAAD3/wEAAAACAAAAAAD3/wIAAAACAAAAAAD3/wMAAAACAAAAAAD3/wAAAAACAAAAAAD3//7/AAACAAAAAAD3//3/AAACAAAAAAD4//z/AAADAAAAAAD5//z/AAADAAAAAAD6//z/AAADAAAAAAD6//7/AAADAAAAAAD6////AAABAAAAAAD6/wAAAAADAAAAAAD6/wEAAAABAAAAAAD8//v/AAAEAAAAAAAHAPv/AAAFAAAAAAAAAAAAAAAAAAEAAAD9/wQAAAADAAAAAAD+/wQAAAADAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAADAAAAAAACAAQAAAADAAAAAAADAAQAAAADAAAAAAAEAAQAAAADAAAAAAD5/wEAAAABAAAAAAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAGAPv/AAABAAAAAAAFAPv/AAABAAAAAAAEAPv/AAABAAAAAAADAPv/AAABAAAAAAACAPv/AAABAAAAAAABAPv/AAABAAAAAAAAAPv/AAABAAAAAAD///v/AAABAAAAAAD+//v/AAABAAAAAAD9//v/AAABAAAAAAD8//z/AAAAAAAAAAD5//7/AAADAAAAAAD8//r/AAADAAAAAAD9//r/AAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAABAPr/AAADAAAAAAACAPr/AAADAAAAAAADAPr/AAADAAAAAAAEAPr/AAADAAAAAAAFAPr/AAADAAAAAAAGAPr/AAADAAAAAAAAAPr/AAADAAAAAAAHAPr/AAADAAAAAAD7//z/AAAFAAEAAAD7//v/AAACAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAAQAAAAAAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAAAAAUAAAABAAAAAAD//wUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD6/wUAAAABAAAAAAD5/wUAAAABAAAAAAD4/wUAAAABAAAAAAD3/wQAAAACAAAAAAAAAP//AAAFAAIAAAD5/wAAAAAEAAEAAAD9/wAAAAAEAAEAAAABAAAAAAAEAAEAAAD//wAAAAAFAAEAAAD+/wAAAAADAAAAAAACAAAAAAADAAAAAAACAP//AAABAAAAAAABAP//AAABAAAAAAD/////AAABAAAAAAD+////AAABAAAAAAD9////AAABAAAAAAD5////AAABAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAD3//z/AAADAAIAAAAIAAUAAAAAAAIAAAAGAAEAAAAAAAIAAAD8//3/AAAAAAIAAAD3/wUAAAABAAIAAAD8/wEAAAAAAAMAAAAAAAEAAAAAAAMAAAAEAAEAAAAAAAMAAAD4/wEAAAABAAIAAAD5////AAACAAIAAAD3////AAADAAMAAAD9////AAACAAIAAAABAP//AAACAAIAAAAFAP//AAACAAIAAAD7////AAADAAIAAAD/////AAADAAIAAAADAP//AAADAAIAAAAGAP7/AAACAAIAAAAIAPr/AAACAAIAAAD7//r/AAADAAIAAAA=")
+
+[node name="WinGlow2" parent="Background" instance=ExtResource("5_546p8")]
+visible = false
+offset_left = 240.0
+offset_top = -40.0
+offset_right = 320.0
+
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_cnikc")
+}
+
+[node name="Player" parent="." instance=ExtResource("4_546p8")]
+position = Vector2(296, 244)
+SPEED = 135.0
+alive = true
+
+[node name="WinArea" parent="." instance=ExtResource("5_vu5tt")]
+position = Vector2(296, 244)
+scale = Vector2(2.0006423, 2.0006423)
+number = 1
+location = Vector2(296, 244)
+
+[node name="WinArea2" parent="." instance=ExtResource("5_vu5tt")]
+position = Vector2(856, 324)
+scale = Vector2(2.0006423, 2.0006423)
+number = 2
+location = Vector2(856, 324)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Coin" parent="Node2D" instance=ExtResource("6_cnikc")]
+position = Vector2(276, 344)
+coin_name = "a"
+
+[node name="Coin2" parent="Node2D" instance=ExtResource("6_cnikc")]
+position = Vector2(436, 344)
+coin_name = "b"
+
+[node name="Coin3" parent="Node2D" instance=ExtResource("6_cnikc")]
+position = Vector2(596, 344)
+coin_name = "c"
+
+[node name="Coin4" parent="Node2D" instance=ExtResource("6_cnikc")]
+position = Vector2(756, 344)
+coin_name = "d"
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Level6Trap" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(496, 204)
+rotation = -0.99793345
+rotate_right = true
+
+[node name="Level6Trap2" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(656, 203)
+rotation = -0.9983283
+
+[node name="Level6Trap3" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(816, 204)
+rotation = -0.9983283
+rotate_right = true
+
+[node name="Level6Trap4" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(816, 443)
+rotation = -0.9983283
+rotate_right = true
+
+[node name="Level6Trap5" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(656, 443)
+rotation = -0.9983283
+
+[node name="Level6Trap6" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(496, 444)
+rotation = -0.9983283
+rotate_right = true
+
+[node name="Level6Trap7" parent="Traps" instance=ExtResource("8_b33os")]
+position = Vector2(336, 444)
+rotation = -0.9983283
+
+[editable path="Background"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://n4tfpppb5ldo"]
+
+[ext_resource type="Script" uid="uid://cohm8la4errr4" path="res://Scripts/level_select_button.gd" id="1_k1syi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1syi"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[node name="level_select_button" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k1syi")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 5.999996
+offset_right = 80.27785
+offset_bottom = 46.767536
+scale = Vector2(2.181, 2.181)
+theme_override_styles/panel = SubResource("StyleBoxFlat_k1syi")
+metadata/_edit_vertical_guides_ = [112.0]
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 17.778044
+offset_top = -15.589179
+offset_right = 61.778046
+offset_bottom = 1.410821
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "LEVEL 1"
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
+[connection signal="mouse_entered" from="Panel" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_mouse_exited"]

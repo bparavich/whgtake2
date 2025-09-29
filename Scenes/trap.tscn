@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://brh3pio6rorq2"]
 
-[ext_resource type="Texture2D" uid="uid://dwrmyjeli3uu0" path="res://Assets/Ball_Sprite - Copy.png" id="1_0juii"]
+[ext_resource type="Texture2D" uid="uid://dwrmyjeli3uu0" path="res://Assets/Textures/Ball_Sprite - Copy.png" id="1_0juii"]
 [ext_resource type="Script" uid="uid://cueoa4j73p6uc" path="res://Scripts/trap.gd" id="1_xmcxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmcxk"]

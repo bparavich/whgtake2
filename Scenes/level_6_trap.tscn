@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy2tntsdj4jj4"]
+
+[ext_resource type="Script" uid="uid://rrqslo6oaas0" path="res://Scripts/level_6_trap.gd" id="1_2qmcu"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="1_awvsc"]
+
+[node name="Level6Trap" type="Node2D"]
+script = ExtResource("1_2qmcu")
+rotate_right = false
+metadata/_edit_vertical_guides_ = [25.0, 50.0, 75.0]
+
+[node name="Trap" type="Node2D" parent="."]
+
+[node name="Node2D3" type="Node2D" parent="Trap"]
+rotation = 2.0943952
+
+[node name="Node2D" type="Node2D" parent="Trap/Node2D3"]
+rotation = 2.0943952
+
+[node name="Trap" parent="Trap/Node2D3/Node2D" instance=ExtResource("1_awvsc")]
+
+[node name="Trap2" parent="Trap/Node2D3/Node2D" instance=ExtResource("1_awvsc")]
+position = Vector2(25, 0)
+
+[node name="Trap3" parent="Trap/Node2D3/Node2D" instance=ExtResource("1_awvsc")]
+position = Vector2(50, 0)
+
+[node name="Trap4" parent="Trap/Node2D3/Node2D" instance=ExtResource("1_awvsc")]
+position = Vector2(75, 0)
+
+[node name="Node2D2" type="Node2D" parent="Trap/Node2D3"]
+
+[node name="Trap5" parent="Trap/Node2D3/Node2D2" instance=ExtResource("1_awvsc")]
+position = Vector2(25, 0)
+
+[node name="Trap6" parent="Trap/Node2D3/Node2D2" instance=ExtResource("1_awvsc")]
+position = Vector2(50, 0)
+
+[node name="Trap7" parent="Trap/Node2D3/Node2D2" instance=ExtResource("1_awvsc")]
+position = Vector2(75, 0)
+
+[node name="Trap8" parent="Trap" instance=ExtResource("1_awvsc")]
+position = Vector2(25, 0)
+
+[node name="Trap9" parent="Trap" instance=ExtResource("1_awvsc")]
+position = Vector2(50, 0)
+
+[node name="Trap10" parent="Trap" instance=ExtResource("1_awvsc")]
+position = Vector2(75, 0)

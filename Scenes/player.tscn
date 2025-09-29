@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d31poy20qyico"]
+[gd_scene load_steps=8 format=3 uid="uid://d31poy20qyico"]
 
 [ext_resource type="Script" uid="uid://csj5qs4onrbqw" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://d20w5didwvu2d" path="res://Assets/Player_Sprite.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://d20w5didwvu2d" path="res://Assets/Textures/Player_Sprite.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://cw2gtor62v5yc" path="res://Assets/Audio/Punch Sound Effect..mp3" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(74.2857, 74.2857)
@@ -45,6 +46,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+process_mode = 3
 collision_layer = 2
 collision_mask = 29
 motion_mode = 1
@@ -62,3 +64,8 @@ shape = SubResource("RectangleShape2D_cvnsp")
 libraries = {
 &"": SubResource("AnimationLibrary_fkybt")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6t5aa")
+volume_db = -18.546
+bus = &"SFX"

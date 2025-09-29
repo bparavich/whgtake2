@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=4 uid="uid://h2byp0l681f5"]
 
 [ext_resource type="Script" uid="uid://cnpvlxbpj88n0" path="res://Scripts/background.gd" id="1_ltlj5"]
-[ext_resource type="Texture2D" uid="uid://bsmtntllpdwr3" path="res://Assets/Tilemap_WHG.png" id="1_sn1xx"]
-[ext_resource type="Texture2D" uid="uid://cu5xd6ojbt82v" path="res://Assets/wall_tile_layer.png" id="2_pojwb"]
+[ext_resource type="Texture2D" uid="uid://bsmtntllpdwr3" path="res://Assets/Textures/Tilemap_WHG.png" id="1_sn1xx"]
+[ext_resource type="Texture2D" uid="uid://cu5xd6ojbt82v" path="res://Assets/Textures/wall_tile_layer.png" id="2_pojwb"]
 [ext_resource type="PackedScene" uid="uid://oeeqtt33gyw1" path="res://Scenes/win_glow.tscn" id="3_rymcx"]
 [ext_resource type="PackedScene" uid="uid://c0i5udkih8ccp" path="res://Scenes/start_glow.tscn" id="4_42s4r"]
 
@@ -205,19 +205,13 @@ _data = {
 
 [node name="Background" type="Node2D"]
 script = ExtResource("1_ltlj5")
+metadata/_edit_horizontal_guides_ = [239.0]
 
-[node name="Black" type="ColorRect" parent="."]
+[node name="Black2" type="ColorRect" parent="."]
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 324.0
-color = Color(0, 0, 0, 1)
-
-[node name="Black2" type="ColorRect" parent="."]
-offset_left = -576.0
-offset_top = -250.0
-offset_right = 576.0
-offset_bottom = 250.0
 color = Color(0.775058, 0.72259, 0.993063, 1)
 
 [node name="floor" type="TileMapLayer" parent="."]

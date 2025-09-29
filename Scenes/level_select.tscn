@@ -1,0 +1,399 @@
+[gd_scene load_steps=22 format=3 uid="uid://wm5of4pml2ev"]
+
+[ext_resource type="PackedScene" uid="uid://bm0h40yuv040c" path="res://Scenes/level_1.tscn" id="1_1fiak"]
+[ext_resource type="Script" uid="uid://by6sgsahjjet0" path="res://Scripts/level_select.gd" id="1_72w8f"]
+[ext_resource type="PackedScene" uid="uid://elpeu83pwxef" path="res://Scenes/level_2.tscn" id="2_2sqnl"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_kb5mc"]
+[ext_resource type="PackedScene" uid="uid://g2o77e22hkaq" path="res://Scenes/level_3.tscn" id="3_72w8f"]
+[ext_resource type="PackedScene" uid="uid://be8fo6ccf13b6" path="res://Scenes/level_4.tscn" id="4_s6o25"]
+[ext_resource type="PackedScene" uid="uid://n4tfpppb5ldo" path="res://Scenes/level_select_button.tscn" id="4_x038j"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="7_qnihq"]
+[ext_resource type="PackedScene" uid="uid://2an7y8jdk058" path="res://Scenes/level_5.tscn" id="8_tgoug"]
+[ext_resource type="PackedScene" uid="uid://dd2oh0bankokd" path="res://Scenes/level_6.tscn" id="9_x038j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb5mc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnihq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgoug"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x038j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fccik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x038j"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlwxk"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npf18"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpfon"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07bvh"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciagn"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_72w8f")
+
+[node name="Background" parent="." instance=ExtResource("2_kb5mc")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="1"]
+visible = false
+
+[node name="TileMapLayer" parent="Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="Background" index="5"]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource("7_qnihq")]
+
+[node name="UI" parent="HUD" index="2"]
+mouse_filter = 2
+
+[node name="Level" parent="HUD/UI" index="0"]
+visible = false
+
+[node name="Score" parent="HUD/UI" index="1"]
+visible = false
+
+[node name="Deaths" parent="HUD/UI" index="2"]
+visible = false
+
+[node name="UN" parent="HUD/UI" index="4"]
+offset_top = 592.0
+offset_bottom = 647.0
+
+[node name="mm" type="Button" parent="HUD"]
+offset_left = 368.0
+offset_top = 547.0
+offset_right = 785.0
+offset_bottom = 602.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0.94509804, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.94509804, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kb5mc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qnihq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tgoug")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x038j")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fccik")
+text = "BACK TO MAIN MENU"
+
+[node name="ButtonsAndLevels" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="level_select_button" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 112.0
+offset_right = 425.0
+offset_bottom = 233.0
+level = ExtResource("2_2sqnl")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_x038j")
+
+[node name="Label" parent="ButtonsAndLevels/level_select_button/Panel" index="0"]
+text = "LEVEL 2"
+
+[node name="level_select_button2" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 112.0
+offset_right = 605.0
+offset_bottom = 233.0
+level = ExtResource("3_72w8f")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button2" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlwxk")
+
+[node name="Label" parent="ButtonsAndLevels/level_select_button2/Panel" index="0"]
+text = "LEVEL 3"
+
+[node name="level_select_button3" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 36.999996
+offset_top = 112.0
+offset_right = 242.0
+offset_bottom = 233.0
+level = ExtResource("1_1fiak")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button3" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_npf18")
+
+[node name="level_select_button4" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 112.0
+offset_right = 970.0
+offset_bottom = 233.0
+level = ExtResource("8_tgoug")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button4" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_bpfon")
+
+[node name="Label" parent="ButtonsAndLevels/level_select_button4/Panel" index="0"]
+text = "LEVEL 5"
+
+[node name="level_select_button5" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 112.0
+offset_right = 1150.0
+offset_bottom = 233.0
+level = ExtResource("9_x038j")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button5" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_07bvh")
+
+[node name="Label" parent="ButtonsAndLevels/level_select_button5/Panel" index="0"]
+text = "LEVEL 6"
+
+[node name="level_select_button6" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 112.0
+offset_right = 787.0
+offset_bottom = 233.0
+level = ExtResource("4_s6o25")
+
+[node name="Panel" parent="ButtonsAndLevels/level_select_button6" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_ciagn")
+
+[node name="Label" parent="ButtonsAndLevels/level_select_button6/Panel" index="0"]
+text = "LEVEL 4"
+
+[node name="Level1" parent="ButtonsAndLevels" instance=ExtResource("1_1fiak")]
+position = Vector2(19, 99)
+scale = Vector2(0.18, 0.18)
+script = null
+
+[node name="Black2" parent="ButtonsAndLevels/Level1/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level1/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level1/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="Player" parent="ButtonsAndLevels/Level1" index="1"]
+SPEED = 300.0
+alive = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Level1" index="3"]
+visible = false
+
+[node name="HUD" parent="ButtonsAndLevels/Level1" index="4"]
+visible = false
+
+[node name="Level2" parent="ButtonsAndLevels" instance=ExtResource("2_2sqnl")]
+position = Vector2(206.99998, 98.99999)
+scale = Vector2(0.18, 0.18)
+script = null
+
+[node name="Black2" parent="ButtonsAndLevels/Level2/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level2/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level2/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="WinArea" parent="ButtonsAndLevels/Level2" index="1"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Level2" index="2"]
+SPEED = 300.0
+alive = false
+
+[node name="HUD" parent="ButtonsAndLevels/Level2" index="5"]
+visible = false
+
+[node name="Level4" parent="ButtonsAndLevels" instance=ExtResource("4_s6o25")]
+position = Vector2(562, 107)
+scale = Vector2(0.18, 0.18)
+script = null
+
+[node name="Black2" parent="ButtonsAndLevels/Level4/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level4/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level4/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="WinArea" parent="ButtonsAndLevels/Level4" index="1"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Level4" index="3"]
+SPEED = 300.0
+alive = false
+
+[node name="HUD" parent="ButtonsAndLevels/Level4" index="5"]
+visible = false
+
+[node name="Level3" parent="ButtonsAndLevels" instance=ExtResource("3_72w8f")]
+position = Vector2(382.99997, 100)
+scale = Vector2(0.18000002, 0.18000002)
+script = null
+
+[node name="Black2" parent="ButtonsAndLevels/Level3/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level3/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level3/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="WinArea" parent="ButtonsAndLevels/Level3" index="1"]
+visible = false
+
+[node name="WinArea2" parent="ButtonsAndLevels/Level3" index="2"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Level3" index="4"]
+SPEED = 300.0
+alive = false
+
+[node name="HUD" parent="ButtonsAndLevels/Level3" index="7"]
+visible = false
+
+[node name="Level5" parent="ButtonsAndLevels" instance=ExtResource("8_tgoug")]
+position = Vector2(751, 106.99999)
+scale = Vector2(0.18, 0.18)
+script = null
+
+[node name="Black2" parent="ButtonsAndLevels/Level5/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level5/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level5/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="Player" parent="ButtonsAndLevels/Level5" index="6"]
+SPEED = 300.0
+alive = false
+
+[node name="HUD" parent="ButtonsAndLevels/Level5" index="8"]
+visible = false
+
+[node name="Level6" parent="ButtonsAndLevels" instance=ExtResource("9_x038j")]
+position = Vector2(930.99994, 103.99999)
+scale = Vector2(0.18, 0.18)
+script = null
+
+[node name="HUD" parent="ButtonsAndLevels/Level6" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Level6/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Level6/Background" index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Level6/Background" index="5"]
+tile_map_data = PackedByteArray()
+
+[node name="Player" parent="ButtonsAndLevels/Level6" index="2"]
+SPEED = 300.0
+alive = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Level6" index="3"]
+visible = false
+
+[node name="WinArea2" parent="ButtonsAndLevels/Level6" index="4"]
+visible = false
+
+[connection signal="pressed" from="HUD/mm" to="." method="_on_mm_pressed"]
+
+[editable path="Background"]
+[editable path="HUD"]
+[editable path="ButtonsAndLevels/level_select_button"]
+[editable path="ButtonsAndLevels/level_select_button2"]
+[editable path="ButtonsAndLevels/level_select_button3"]
+[editable path="ButtonsAndLevels/level_select_button4"]
+[editable path="ButtonsAndLevels/level_select_button5"]
+[editable path="ButtonsAndLevels/level_select_button6"]
+[editable path="ButtonsAndLevels/Level1"]
+[editable path="ButtonsAndLevels/Level1/Background"]
+[editable path="ButtonsAndLevels/Level2"]
+[editable path="ButtonsAndLevels/Level2/Background"]
+[editable path="ButtonsAndLevels/Level4"]
+[editable path="ButtonsAndLevels/Level4/Background"]
+[editable path="ButtonsAndLevels/Level4/WinArea"]
+[editable path="ButtonsAndLevels/Level4/Level4SpinTrap"]
+[editable path="ButtonsAndLevels/Level3"]
+[editable path="ButtonsAndLevels/Level3/Background"]
+[editable path="ButtonsAndLevels/Level3/WinArea"]
+[editable path="ButtonsAndLevels/Level3/WinArea2"]
+[editable path="ButtonsAndLevels/Level5"]
+[editable path="ButtonsAndLevels/Level5/Background"]
+[editable path="ButtonsAndLevels/Level6"]
+[editable path="ButtonsAndLevels/Level6/Background"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://be8fo6ccf13b6"]
+[gd_scene load_steps=10 format=4 uid="uid://be8fo6ccf13b6"]
 
 [ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_f6i20"]
 [ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_dvrgg"]
@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="4_5a8oa"]
 [ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="5_3ntyy"]
 [ext_resource type="PackedScene" uid="uid://duhlnm7quyilm" path="res://Scenes/level_4_spin_trap.tscn" id="7_wk15n"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="8_5a8oa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wk15n"]
 size = Vector2(40, 80)
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_f6i20")
+level = 4
 score_required = 10
 next_level = ExtResource("2_wk15n")
 metadata/_edit_vertical_guides_ = [616.0]
@@ -21,25 +23,25 @@ metadata/_edit_horizontal_guides_ = [364.0]
 [node name="Background" parent="." instance=ExtResource("2_dvrgg")]
 position = Vector2(576, 324)
 
-[node name="floor" parent="Background" index="2"]
+[node name="floor" parent="Background" index="1"]
 tile_map_data = PackedByteArray("AAD/////AgACAAAAAAAAAAAAAgACAAAAAAAAAP7/AgACAAAAAAD//wEAAgACAAAAAAD+/wAAAgACAAAAAAD9/wEAAgACAAAAAAD8/wAAAgACAAAAAAD9////AgACAAAAAAD+//7/AgACAAAAAAABAP//AgACAAAAAAACAP7/AgACAAAAAAADAP//AgACAAAAAAACAAAAAgACAAAAAAABAAEAAgACAAAAAAADAAEAAgACAAAAAAAAAAEAAgABAAAAAAD//wAAAgABAAAAAAD///7/AgABAAAAAAD8/wEAAgABAAAAAAD9/wAAAgABAAAAAAD+////AgABAAAAAAD+/wEAAgABAAAAAAAAAP//AgABAAAAAAABAP7/AgABAAAAAAADAP7/AgABAAAAAAACAP//AgABAAAAAAABAAAAAgABAAAAAAACAAEAAgABAAAAAAADAAAAAgABAAAAAAD+/wIAAgACAAAAAAAAAAIAAgACAAAAAAACAAIAAgACAAAAAAADAAIAAgABAAAAAAABAAIAAgABAAAAAAD//wIAAgABAAAAAAD9/wIAAgABAAAAAAD6/wEAAgAAAAAAAAD6/wAAAgAAAAAAAAAAAPr/AgAAAAAAAAABAPr/AgAAAAAAAAABAPv/AgAAAAAAAAAAAPv/AgAAAAAAAAABAPz/AgABAAAAAAABAAQAAgABAAAAAAAAAAQAAgACAAAAAAABAAMAAgACAAAAAAABAP3/AgACAAAAAAAAAPz/AgACAAAAAAAAAAMAAgABAAAAAAAAAP3/AgABAAAAAAACAP3/AgABAAAAAAAEAP//AgABAAAAAAAEAAEAAgABAAAAAAACAAMAAgABAAAAAAACAAQAAgACAAAAAAADAAMAAgACAAAAAAAEAAIAAgACAAAAAAAEAAAAAgACAAAAAAD//wQAAgABAAAAAAD+/wMAAgABAAAAAAD///3/AgACAAAAAAD//wMAAgACAAAAAAD7/wAAAgAAAAAAAAD7/wEAAgAAAAAAAAA=")
 
-[node name="WinGlow" parent="Background" index="3"]
+[node name="WinGlow" parent="Background" index="2"]
 offset_left = -240.0
 offset_top = 0.0
 offset_right = -160.0
 offset_bottom = 80.0
 
-[node name="StartGlow" parent="Background" index="4"]
+[node name="StartGlow" parent="Background" index="3"]
 offset_left = 0.0
 offset_top = -240.0
 offset_right = 80.0
 offset_bottom = -160.0
 
-[node name="TileMapLayer" parent="Background" index="5"]
+[node name="TileMapLayer" parent="Background" index="4"]
 tile_map_data = PackedByteArray("AAADAP3/AAAEAAEAAAD8////AAAFAAEAAAD8/wAAAAABAAAAAAD8/wEAAAADAAAAAAD8/wIAAAAFAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD9//7/AAAFAAEAAAD+//7/AAAEAAAAAAD9/wMAAAAFAAAAAAD+/wMAAAAEAAEAAAAEAP7/AAAEAAEAAAD7/wIAAAABAAAAAAD7/wEAAAADAAAAAAD7/wAAAAABAAAAAAD7////AAADAAAAAAAEAP//AAAFAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAAFAAEAAAADAAMAAAAFAAEAAAD9/wIAAAAEAAEAAAACAP3/AAAFAAAAAAD///3/AAAEAAAAAAD+//3/AAAFAAEAAAAEAAMAAAAEAAAAAAADAP7/AAAFAAAAAAD6////AAADAAAAAAD6/wAAAAAEAAAAAAD6/wEAAAAEAAEAAAD6/wIAAAABAAAAAAD9////AAAEAAAAAAAAAPr/AAAEAAAAAAADAAQAAAAEAAAAAAABAPr/AAAFAAAAAAD+/wQAAAAFAAAAAAACAAQAAAAFAAEAAAD///z/AAAFAAEAAAD//wQAAAAEAAEAAAACAPz/AAAEAAEAAAACAPv/AAAAAAAAAAACAPr/AAAAAAAAAAD//wUAAAABAAAAAAAAAAUAAAABAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAAAAPn/AAADAAAAAAABAPn/AAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAADAAAAAAABAPz/AAACAAAAAAABAPv/AAACAAAAAAD///v/AAACAAAAAAD///r/AAACAAAAAAAAAPv/AAAAAAAAAAAAAPz/AAAAAAAAAAD5/wAAAAACAAAAAAD5/wEAAAACAAAAAAA=")
 
-[node name="TileMapLayer2" parent="Background" index="6"]
+[node name="TileMapLayer2" parent="Background" index="5"]
 tile_map_data = PackedByteArray("AAD9/wQAAAABAAIAAAAEAAQAAAAAAAIAAAD8/wMAAAABAAIAAAADAAUAAAAAAAIAAAAFAAMAAAAAAAIAAAD9/wAAAAAAAAIAAAD+////AAAAAAIAAAD///7/AAAAAAIAAAAAAP3/AAAAAAIAAAABAP3/AAABAAIAAAACAP7/AAABAAIAAAADAP//AAABAAIAAAD5/wIAAAABAAIAAAD+/wUAAAABAAIAAAD+/wIAAAACAAIAAAD//wMAAAACAAIAAAD9/wEAAAACAAIAAAADAPz/AAACAAIAAAAEAP3/AAACAAIAAAAFAP7/AAACAAIAAAACAAMAAAADAAIAAAADAAIAAAADAAIAAAD8//7/AAADAAIAAAD9//3/AAADAAIAAAD+//z/AAADAAIAAAD///n/AAADAAIAAAACAPn/AAACAAIAAAD5////AAADAAIAAAA=")
 
 [node name="WinArea" parent="." instance=ExtResource("3_wk15n")]
@@ -86,9 +88,12 @@ position = Vector2(11, 110)
 [node name="Player" parent="." instance=ExtResource("5_3ntyy")]
 position = Vector2(616, 124)
 SPEED = 130.0
+alive = true
 
-[node name="Level4SpinTrap" parent="." groups=["trap"] instance=ExtResource("7_wk15n")]
+[node name="Level4SpinTrap" parent="." instance=ExtResource("7_wk15n")]
 position = Vector2(616, 364)
+
+[node name="HUD" parent="." instance=ExtResource("8_5a8oa")]
 
 [editable path="Background"]
 [editable path="WinArea"]

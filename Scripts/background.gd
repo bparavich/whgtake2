@@ -10,6 +10,14 @@ func win_glow_2():
 	$WinGlow2.visible = true
 	$GlowAnimation2.play("win_glow")
 
+func win_glow_3():
+	$WinGlow3.visible = true
+	$GlowAnimation3.play("win_glow")
+
+func win_glow_4():
+	$WinGlow4.visible = true
+	$GlowAnimation4.play("win_glow")
+
 func start_glow():
 	$StartGlow.visible = true
 	glow_animation.play("start_glow")
