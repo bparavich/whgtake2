@@ -12,12 +12,12 @@ extends Node2D
 
 var coins_collected: Array[String] = []
 var score: int = 0
-var _1_was_last: bool = false
-var _2_was_last: bool = false
-var _3_was_last: bool = false
-var _4_was_last: bool = false
 
-func _ready() -> void:	
+func _ready() -> void:
+	if score_required == 0:
+		$HUD/UI/Score.visible = false
+	else:
+		$HUD/UI/Score.visible = true
 	$HUD.update_score(score, score_required)
 	StatManager.is_reloading_scene = false
 	
@@ -29,7 +29,7 @@ func _ready() -> void:
 	if has_checkpoint == false and StatManager.died_this_level == true:
 		$Background.start_glow()
 		
-	if StatManager.died_this_level == true:
+	if StatManager.died_this_level == true and has_checkpoint:
 		$Player.set_player_postion(has_checkpoint)
 		
 	for area in wins:
@@ -70,6 +70,7 @@ func _on_player_win(number, location):
 		StatManager.has_checkpoint = false
 		StatManager.died_this_level = false
 		score = 0
+		StatManager.coins_collected = []
 		
 		if number == 1:
 			$Background.win_glow()
@@ -85,31 +86,16 @@ func _on_player_win(number, location):
 		await get_tree().create_timer(1.5).timeout
 		StatManager.check_number = 0
 		get_tree().change_scene_to_packed(next_level)
+		
 	elif score < score_required:
 		if has_checkpoint:
-			if number == 1 and _1_was_last == false:
+			if number == 1:
 				$Background.win_glow()
-				_1_was_last = true
-				_2_was_last = false
-				_3_was_last = false
-				_4_was_last = false
-			elif number == 2 and _2_was_last == false:
-				_1_was_last = false
-				_2_was_last = true
-				_3_was_last = false
-				_4_was_last = false
+			elif number == 2:
 				$Background.win_glow_2()
-			elif number == 3 and _3_was_last == false:
-				_1_was_last = false
-				_2_was_last = false
-				_3_was_last = true
-				_4_was_last = false
+			elif number == 3:
 				$Background.win_glow_3()
-			elif number == 4 and _4_was_last == false:
-				_1_was_last = false
-				_2_was_last = false
-				_3_was_last = false
-				_4_was_last = true
+			elif number == 4:
 				$Background.win_glow_4()
 			StatManager.check_number = number
 			StatManager.coins_collected.append_array(coins_collected)

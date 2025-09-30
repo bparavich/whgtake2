@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brh3pio6rorq2"]
+[gd_scene load_steps=24 format=3 uid="uid://brh3pio6rorq2"]
 
 [ext_resource type="Texture2D" uid="uid://dwrmyjeli3uu0" path="res://Assets/Textures/Ball_Sprite - Copy.png" id="1_0juii"]
 [ext_resource type="Script" uid="uid://cueoa4j73p6uc" path="res://Scripts/trap.gd" id="1_xmcxk"]
@@ -92,13 +92,279 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -256)]
 }
 
+[sub_resource type="Animation" id="Animation_fabh7"]
+resource_name = "level_7_down"
+length = 1.7
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 336)]
+}
+
+[sub_resource type="Animation" id="Animation_1520v"]
+resource_name = "level_7_up"
+length = 1.7
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -336)]
+}
+
+[sub_resource type="Animation" id="Animation_q4u3d"]
+resource_name = "level_8_first"
+length = 4.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(120, 0), Vector2(120, 120), Vector2(0, 120)]
+}
+
+[sub_resource type="Animation" id="Animation_xjjbg"]
+resource_name = "level_8_second"
+length = 3.3333
+loop_mode = 1
+step = 0.3333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.6666667, 2.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(120, 0), Vector2(120, 80), Vector2(0, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_rqc61"]
+resource_name = "level_8_solo"
+length = 6.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -240), Vector2(-120, -240), Vector2(-120, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d1eiu"]
+resource_name = "level_8_third"
+length = 6.0
+loop_mode = 1
+step = 0.3333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(120, 0), Vector2(120, 240), Vector2(0, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_4xht2"]
+resource_name = "level_9_2x2"
+length = 0.72
+loop_mode = 1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36, 0.54),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 0), Vector2(40, 40), Vector2(0, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_8d5jt"]
+resource_name = "level_9_L1"
+length = 1.5
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 90), Vector2(-50, 90), Vector2(0, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_jmfi2"]
+resource_name = "level_9_L2"
+length = 1.5
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(90, 0), Vector2(90, -50), Vector2(90, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nn14i"]
+resource_name = "level_9_L3"
+length = 1.63
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.54, 0.81, 1.09),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 108), Vector2(-40, 108), Vector2(0, 108)]
+}
+
+[sub_resource type="Animation" id="Animation_o4afq"]
+resource_name = "level_10_up"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -60)]
+}
+
+[sub_resource type="Animation" id="Animation_3ko4r"]
+resource_name = "level_10_down"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 60)]
+}
+
+[sub_resource type="Animation" id="Animation_ll33o"]
+resource_name = "level_10_left"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-60, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r1thm"]
+resource_name = "level_10_right"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(60, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8uao8"]
 _data = {
 &"RESET": SubResource("Animation_xmcxk"),
+&"level_10_down": SubResource("Animation_3ko4r"),
+&"level_10_left": SubResource("Animation_ll33o"),
+&"level_10_right": SubResource("Animation_r1thm"),
+&"level_10_up": SubResource("Animation_o4afq"),
 &"level_1_left": SubResource("Animation_8uao8"),
 &"level_1_right": SubResource("Animation_0juii"),
 &"level_2_down": SubResource("Animation_q1s4t"),
-&"level_2_up": SubResource("Animation_utgws")
+&"level_2_up": SubResource("Animation_utgws"),
+&"level_7_down": SubResource("Animation_fabh7"),
+&"level_7_up": SubResource("Animation_1520v"),
+&"level_8_first": SubResource("Animation_q4u3d"),
+&"level_8_second": SubResource("Animation_xjjbg"),
+&"level_8_solo": SubResource("Animation_rqc61"),
+&"level_8_third": SubResource("Animation_d1eiu"),
+&"level_9_2x2": SubResource("Animation_4xht2"),
+&"level_9_L1": SubResource("Animation_8d5jt"),
+&"level_9_L2": SubResource("Animation_jmfi2"),
+&"level_9_L3": SubResource("Animation_nn14i")
 }
 
 [node name="Trap" type="Node2D" groups=["trap"]]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://wm5of4pml2ev"]
+[gd_scene load_steps=38 format=3 uid="uid://wm5of4pml2ev"]
 
 [ext_resource type="PackedScene" uid="uid://bm0h40yuv040c" path="res://Scenes/level_1.tscn" id="1_1fiak"]
 [ext_resource type="Script" uid="uid://by6sgsahjjet0" path="res://Scripts/level_select.gd" id="1_72w8f"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="7_qnihq"]
 [ext_resource type="PackedScene" uid="uid://2an7y8jdk058" path="res://Scenes/level_5.tscn" id="8_tgoug"]
 [ext_resource type="PackedScene" uid="uid://dd2oh0bankokd" path="res://Scenes/level_6.tscn" id="9_x038j"]
+[ext_resource type="PackedScene" uid="uid://cbj0yfmm5obj4" path="res://Scenes/level_7.tscn" id="11_bpfon"]
+[ext_resource type="PackedScene" uid="uid://d1g7uucs68voo" path="res://Scenes/level_8.tscn" id="12_07bvh"]
+[ext_resource type="PackedScene" uid="uid://dd7o4q2xesm0v" path="res://Scenes/level_9.tscn" id="13_ciagn"]
+[ext_resource type="PackedScene" uid="uid://td0iagjds7pm" path="res://Scenes/level_10.tscn" id="14_07bvh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb5mc"]
 
@@ -20,6 +24,17 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x038j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fccik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npf18"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x038j"]
 bg_color = Color(0.6666667, 0.64705884, 1, 1)
@@ -43,7 +58,7 @@ shadow_color = Color(0, 0, 0, 0.29803923)
 shadow_size = 1
 shadow_offset = Vector2(4, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npf18"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciagn"]
 bg_color = Color(0.6666667, 0.64705884, 1, 1)
 border_width_left = 1
 border_width_top = 1
@@ -76,7 +91,128 @@ shadow_color = Color(0, 0, 0, 0.29803923)
 shadow_size = 1
 shadow_offset = Vector2(4, 4)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciagn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx562"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn3si"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2u0r"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2rck"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1k4n"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5eva"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l15rd"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfib2"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqox3"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ps72n"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j2gv"]
+bg_color = Color(0.6666667, 0.64705884, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38039216, 0.38039216, 0.4, 1)
+shadow_color = Color(0, 0, 0, 0.29803923)
+shadow_size = 1
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6n8w"]
 bg_color = Color(0.6666667, 0.64705884, 1, 1)
 border_width_left = 1
 border_width_top = 1
@@ -92,6 +228,8 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_72w8f")
+metadata/_edit_vertical_guides_ = [482.0, 670.0]
+metadata/_edit_horizontal_guides_ = [348.0, 313.0]
 
 [node name="Background" parent="." instance=ExtResource("2_kb5mc")]
 position = Vector2(576, 324)
@@ -143,35 +281,12 @@ text = "BACK TO MAIN MENU"
 [node name="ButtonsAndLevels" type="Control" parent="."]
 anchors_preset = 0
 
-[node name="level_select_button" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
-layout_mode = 0
-offset_left = 220.0
-offset_top = 112.0
-offset_right = 425.0
-offset_bottom = 233.0
-level = ExtResource("2_2sqnl")
+[node name="Panels" type="Control" parent="ButtonsAndLevels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Panel" parent="ButtonsAndLevels/level_select_button" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_x038j")
-
-[node name="Label" parent="ButtonsAndLevels/level_select_button/Panel" index="0"]
-text = "LEVEL 2"
-
-[node name="level_select_button2" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 112.0
-offset_right = 605.0
-offset_bottom = 233.0
-level = ExtResource("3_72w8f")
-
-[node name="Panel" parent="ButtonsAndLevels/level_select_button2" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_mlwxk")
-
-[node name="Label" parent="ButtonsAndLevels/level_select_button2/Panel" index="0"]
-text = "LEVEL 3"
-
-[node name="level_select_button3" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+[node name="Level1b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
 layout_mode = 0
 offset_left = 36.999996
 offset_top = 112.0
@@ -179,38 +294,38 @@ offset_right = 242.0
 offset_bottom = 233.0
 level = ExtResource("1_1fiak")
 
-[node name="Panel" parent="ButtonsAndLevels/level_select_button3" index="0"]
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level1b" index="0"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_npf18")
 
-[node name="level_select_button4" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+[node name="Level2b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
 layout_mode = 0
-offset_left = 765.0
+offset_left = 220.0
 offset_top = 112.0
-offset_right = 970.0
+offset_right = 425.0
 offset_bottom = 233.0
-level = ExtResource("8_tgoug")
+level = ExtResource("2_2sqnl")
 
-[node name="Panel" parent="ButtonsAndLevels/level_select_button4" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_bpfon")
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level2b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_x038j")
 
-[node name="Label" parent="ButtonsAndLevels/level_select_button4/Panel" index="0"]
-text = "LEVEL 5"
+[node name="Label" parent="ButtonsAndLevels/Panels/Level2b/Panel" index="0"]
+text = "LEVEL 2"
 
-[node name="level_select_button5" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+[node name="Level3b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
 layout_mode = 0
-offset_left = 945.0
+offset_left = 400.0
 offset_top = 112.0
-offset_right = 1150.0
+offset_right = 605.0
 offset_bottom = 233.0
-level = ExtResource("9_x038j")
+level = ExtResource("3_72w8f")
 
-[node name="Panel" parent="ButtonsAndLevels/level_select_button5" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_07bvh")
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level3b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_mlwxk")
 
-[node name="Label" parent="ButtonsAndLevels/level_select_button5/Panel" index="0"]
-text = "LEVEL 6"
+[node name="Label" parent="ButtonsAndLevels/Panels/Level3b/Panel" index="0"]
+text = "LEVEL 3"
 
-[node name="level_select_button6" parent="ButtonsAndLevels" instance=ExtResource("4_x038j")]
+[node name="Level4b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
 layout_mode = 0
 offset_left = 582.0
 offset_top = 112.0
@@ -218,182 +333,497 @@ offset_right = 787.0
 offset_bottom = 233.0
 level = ExtResource("4_s6o25")
 
-[node name="Panel" parent="ButtonsAndLevels/level_select_button6" index="0"]
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level4b" index="0"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_ciagn")
 
-[node name="Label" parent="ButtonsAndLevels/level_select_button6/Panel" index="0"]
+[node name="Label" parent="ButtonsAndLevels/Panels/Level4b/Panel" index="0"]
 text = "LEVEL 4"
 
-[node name="Level1" parent="ButtonsAndLevels" instance=ExtResource("1_1fiak")]
+[node name="Level5b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 112.0
+offset_right = 970.0
+offset_bottom = 233.0
+level = ExtResource("8_tgoug")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level5b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_bpfon")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level5b/Panel" index="0"]
+text = "LEVEL 5"
+
+[node name="Level6b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 112.0
+offset_right = 1150.0
+offset_bottom = 233.0
+level = ExtResource("9_x038j")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level6b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_07bvh")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level6b/Panel" index="0"]
+text = "LEVEL 6"
+
+[node name="Level7b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 36.999996
+offset_top = 261.0
+offset_right = 242.0
+offset_bottom = 382.0
+level = ExtResource("11_bpfon")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level7b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_yx562")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level7b/Panel" index="0"]
+text = "LEVEL 7"
+
+[node name="Level8b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 261.0
+offset_right = 425.0
+offset_bottom = 382.0
+level = ExtResource("12_07bvh")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level8b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_wn3si")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level8b/Panel" index="0"]
+text = "LEVEL 8"
+
+[node name="Level9b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 261.0
+offset_right = 605.0
+offset_bottom = 382.0
+level = ExtResource("13_ciagn")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level9b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2u0r")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level9b/Panel" index="0"]
+text = "LEVEL 9"
+
+[node name="Level10b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 261.0
+offset_right = 787.0
+offset_bottom = 382.0
+level = ExtResource("14_07bvh")
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level10b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2rck")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level10b/Panel" index="0"]
+text = "LEVEL 10"
+vertical_alignment = 1
+
+[node name="Level11b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 261.0
+offset_right = 970.0
+offset_bottom = 382.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level11b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_y1k4n")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level11b/Panel" index="0"]
+text = "LEVEL 11"
+
+[node name="Level12b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 945.0
+offset_top = 261.0
+offset_right = 1150.0
+offset_bottom = 382.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level12b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5eva")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level12b/Panel" index="0"]
+text = "LEVEL 12"
+
+[node name="Level13b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 36.999996
+offset_top = 414.0
+offset_right = 242.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level13b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_l15rd")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level13b/Panel" index="0"]
+text = "LEVEL 13"
+
+[node name="Level14b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 220.0
+offset_top = 414.0
+offset_right = 425.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level14b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_gfib2")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level14b/Panel" index="0"]
+text = "LEVEL 14"
+
+[node name="Level15b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 400.0
+offset_top = 414.0
+offset_right = 605.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level15b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqox3")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level15b/Panel" index="0"]
+text = "LEVEL 15"
+
+[node name="Level16b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 582.0
+offset_top = 414.0
+offset_right = 787.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level16b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_ps72n")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level16b/Panel" index="0"]
+text = "LEVEL 16"
+
+[node name="Level17b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 765.0
+offset_top = 414.0
+offset_right = 970.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level17b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_1j2gv")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level17b/Panel" index="0"]
+text = "LEVEL 17"
+
+[node name="Level18b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
+visible = false
+layout_mode = 0
+offset_left = 945.0
+offset_top = 414.0
+offset_right = 1150.0
+offset_bottom = 535.0
+
+[node name="Panel" parent="ButtonsAndLevels/Panels/Level18b" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_a6n8w")
+
+[node name="Label" parent="ButtonsAndLevels/Panels/Level18b/Panel" index="0"]
+text = "LEVEL 18"
+
+[node name="Levels" type="Node2D" parent="ButtonsAndLevels"]
+
+[node name="Level1" parent="ButtonsAndLevels/Levels" instance=ExtResource("1_1fiak")]
 position = Vector2(19, 99)
 scale = Vector2(0.18, 0.18)
 script = null
 
-[node name="Black2" parent="ButtonsAndLevels/Level1/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level1/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level1/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level1/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level1/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level1/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="Player" parent="ButtonsAndLevels/Level1" index="1"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level1" index="1"]
 SPEED = 300.0
 alive = false
 
-[node name="WinArea" parent="ButtonsAndLevels/Level1" index="3"]
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level1" index="3"]
 visible = false
 
-[node name="HUD" parent="ButtonsAndLevels/Level1" index="4"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level1" index="4"]
 visible = false
 
-[node name="Level2" parent="ButtonsAndLevels" instance=ExtResource("2_2sqnl")]
+[node name="Level2" parent="ButtonsAndLevels/Levels" instance=ExtResource("2_2sqnl")]
 position = Vector2(206.99998, 98.99999)
 scale = Vector2(0.18, 0.18)
 script = null
 
-[node name="Black2" parent="ButtonsAndLevels/Level2/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level2/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level2/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level2/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level2/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level2/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="WinArea" parent="ButtonsAndLevels/Level2" index="1"]
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level2" index="1"]
 visible = false
 
-[node name="Player" parent="ButtonsAndLevels/Level2" index="2"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level2" index="2"]
 SPEED = 300.0
 alive = false
 
-[node name="HUD" parent="ButtonsAndLevels/Level2" index="5"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level2" index="5"]
 visible = false
 
-[node name="Level4" parent="ButtonsAndLevels" instance=ExtResource("4_s6o25")]
+[node name="Level4" parent="ButtonsAndLevels/Levels" instance=ExtResource("4_s6o25")]
 position = Vector2(562, 107)
 scale = Vector2(0.18, 0.18)
 script = null
 
-[node name="Black2" parent="ButtonsAndLevels/Level4/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level4/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level4/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level4/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level4/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level4/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="WinArea" parent="ButtonsAndLevels/Level4" index="1"]
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level4" index="1"]
 visible = false
 
-[node name="Player" parent="ButtonsAndLevels/Level4" index="3"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level4" index="3"]
 SPEED = 300.0
 alive = false
 
-[node name="HUD" parent="ButtonsAndLevels/Level4" index="5"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level4" index="5"]
 visible = false
 
-[node name="Level3" parent="ButtonsAndLevels" instance=ExtResource("3_72w8f")]
+[node name="Level3" parent="ButtonsAndLevels/Levels" instance=ExtResource("3_72w8f")]
 position = Vector2(382.99997, 100)
 scale = Vector2(0.18000002, 0.18000002)
 script = null
 
-[node name="Black2" parent="ButtonsAndLevels/Level3/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level3/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level3/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level3/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level3/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level3/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="WinArea" parent="ButtonsAndLevels/Level3" index="1"]
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level3" index="1"]
 visible = false
 
-[node name="WinArea2" parent="ButtonsAndLevels/Level3" index="2"]
+[node name="WinArea2" parent="ButtonsAndLevels/Levels/Level3" index="2"]
 visible = false
 
-[node name="Player" parent="ButtonsAndLevels/Level3" index="4"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level3" index="4"]
 SPEED = 300.0
 alive = false
 
-[node name="HUD" parent="ButtonsAndLevels/Level3" index="7"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level3" index="7"]
 visible = false
 
-[node name="Level5" parent="ButtonsAndLevels" instance=ExtResource("8_tgoug")]
+[node name="Level5" parent="ButtonsAndLevels/Levels" instance=ExtResource("8_tgoug")]
 position = Vector2(751, 106.99999)
 scale = Vector2(0.18, 0.18)
 script = null
 
-[node name="Black2" parent="ButtonsAndLevels/Level5/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level5/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level5/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level5/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level5/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level5/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="Player" parent="ButtonsAndLevels/Level5" index="6"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level5" index="6"]
 SPEED = 300.0
 alive = false
 
-[node name="HUD" parent="ButtonsAndLevels/Level5" index="8"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level5" index="8"]
 visible = false
 
-[node name="Level6" parent="ButtonsAndLevels" instance=ExtResource("9_x038j")]
+[node name="Level6" parent="ButtonsAndLevels/Levels" instance=ExtResource("9_x038j")]
 position = Vector2(930.99994, 103.99999)
 scale = Vector2(0.18, 0.18)
 script = null
 
-[node name="HUD" parent="ButtonsAndLevels/Level6" index="0"]
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level6" index="0"]
 visible = false
 
-[node name="Black2" parent="ButtonsAndLevels/Level6/Background" index="0"]
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level6/Background" index="0"]
 visible = false
 
-[node name="TileMapLayer" parent="ButtonsAndLevels/Level6/Background" index="4"]
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level6/Background" index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="TileMapLayer2" parent="ButtonsAndLevels/Level6/Background" index="5"]
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level6/Background" index="5"]
 tile_map_data = PackedByteArray()
 
-[node name="Player" parent="ButtonsAndLevels/Level6" index="2"]
+[node name="Player" parent="ButtonsAndLevels/Levels/Level6" index="2"]
 SPEED = 300.0
 alive = false
 
-[node name="WinArea" parent="ButtonsAndLevels/Level6" index="3"]
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level6" index="3"]
 visible = false
 
-[node name="WinArea2" parent="ButtonsAndLevels/Level6" index="4"]
+[node name="WinArea2" parent="ButtonsAndLevels/Levels/Level6" index="4"]
 visible = false
+
+[node name="Level7" parent="ButtonsAndLevels/Levels" instance=ExtResource("11_bpfon")]
+position = Vector2(20, 250.99998)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level7" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level7/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level7/Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level7/Background" index="5"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Levels/Level7" index="2"]
+alive = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level7" index="3"]
+visible = false
+
+[node name="Level8" parent="ButtonsAndLevels/Levels" instance=ExtResource("12_07bvh")]
+position = Vector2(203.00002, 250.00002)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level8" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level8/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level8/Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level8/Background" index="5"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Levels/Level8" index="2"]
+alive = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level8" index="3"]
+visible = false
+
+[node name="Level9" parent="ButtonsAndLevels/Levels" instance=ExtResource("13_ciagn")]
+position = Vector2(382.99997, 254)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level9" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level9/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level9/Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level9/Background" index="5"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Levels/Level9" index="2"]
+alive = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level9" index="3"]
+visible = false
+
+[node name="WinArea2" parent="ButtonsAndLevels/Levels/Level9" index="4"]
+visible = false
+
+[node name="WinArea3" parent="ButtonsAndLevels/Levels/Level9" index="5"]
+visible = false
+
+[node name="Level10" parent="ButtonsAndLevels/Levels" instance=ExtResource("14_07bvh")]
+position = Vector2(567, 253.99998)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level10" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level10/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level10/Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level10/Background" index="5"]
+visible = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level10" index="2"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Levels/Level10" index="3"]
+alive = false
 
 [connection signal="pressed" from="HUD/mm" to="." method="_on_mm_pressed"]
 
 [editable path="Background"]
 [editable path="HUD"]
-[editable path="ButtonsAndLevels/level_select_button"]
-[editable path="ButtonsAndLevels/level_select_button2"]
-[editable path="ButtonsAndLevels/level_select_button3"]
-[editable path="ButtonsAndLevels/level_select_button4"]
-[editable path="ButtonsAndLevels/level_select_button5"]
-[editable path="ButtonsAndLevels/level_select_button6"]
-[editable path="ButtonsAndLevels/Level1"]
-[editable path="ButtonsAndLevels/Level1/Background"]
-[editable path="ButtonsAndLevels/Level2"]
-[editable path="ButtonsAndLevels/Level2/Background"]
-[editable path="ButtonsAndLevels/Level4"]
-[editable path="ButtonsAndLevels/Level4/Background"]
-[editable path="ButtonsAndLevels/Level4/WinArea"]
-[editable path="ButtonsAndLevels/Level4/Level4SpinTrap"]
-[editable path="ButtonsAndLevels/Level3"]
-[editable path="ButtonsAndLevels/Level3/Background"]
-[editable path="ButtonsAndLevels/Level3/WinArea"]
-[editable path="ButtonsAndLevels/Level3/WinArea2"]
-[editable path="ButtonsAndLevels/Level5"]
-[editable path="ButtonsAndLevels/Level5/Background"]
-[editable path="ButtonsAndLevels/Level6"]
-[editable path="ButtonsAndLevels/Level6/Background"]
+[editable path="ButtonsAndLevels/Panels/Level1b"]
+[editable path="ButtonsAndLevels/Panels/Level2b"]
+[editable path="ButtonsAndLevels/Panels/Level3b"]
+[editable path="ButtonsAndLevels/Panels/Level4b"]
+[editable path="ButtonsAndLevels/Panels/Level5b"]
+[editable path="ButtonsAndLevels/Panels/Level6b"]
+[editable path="ButtonsAndLevels/Panels/Level7b"]
+[editable path="ButtonsAndLevels/Panels/Level8b"]
+[editable path="ButtonsAndLevels/Panels/Level9b"]
+[editable path="ButtonsAndLevels/Panels/Level10b"]
+[editable path="ButtonsAndLevels/Panels/Level11b"]
+[editable path="ButtonsAndLevels/Panels/Level12b"]
+[editable path="ButtonsAndLevels/Panels/Level13b"]
+[editable path="ButtonsAndLevels/Panels/Level14b"]
+[editable path="ButtonsAndLevels/Panels/Level15b"]
+[editable path="ButtonsAndLevels/Panels/Level16b"]
+[editable path="ButtonsAndLevels/Panels/Level17b"]
+[editable path="ButtonsAndLevels/Panels/Level18b"]
+[editable path="ButtonsAndLevels/Levels/Level1"]
+[editable path="ButtonsAndLevels/Levels/Level1/Background"]
+[editable path="ButtonsAndLevels/Levels/Level2"]
+[editable path="ButtonsAndLevels/Levels/Level2/Background"]
+[editable path="ButtonsAndLevels/Levels/Level4"]
+[editable path="ButtonsAndLevels/Levels/Level4/Background"]
+[editable path="ButtonsAndLevels/Levels/Level4/WinArea"]
+[editable path="ButtonsAndLevels/Levels/Level4/Level4SpinTrap"]
+[editable path="ButtonsAndLevels/Levels/Level3"]
+[editable path="ButtonsAndLevels/Levels/Level3/Background"]
+[editable path="ButtonsAndLevels/Levels/Level3/WinArea"]
+[editable path="ButtonsAndLevels/Levels/Level3/WinArea2"]
+[editable path="ButtonsAndLevels/Levels/Level5"]
+[editable path="ButtonsAndLevels/Levels/Level5/Background"]
+[editable path="ButtonsAndLevels/Levels/Level6"]
+[editable path="ButtonsAndLevels/Levels/Level6/Background"]
+[editable path="ButtonsAndLevels/Levels/Level7"]
+[editable path="ButtonsAndLevels/Levels/Level7/Background"]
+[editable path="ButtonsAndLevels/Levels/Level7/Traps/Trap"]
+[editable path="ButtonsAndLevels/Levels/Level8"]
+[editable path="ButtonsAndLevels/Levels/Level8/Background"]
+[editable path="ButtonsAndLevels/Levels/Level8/Player"]
+[editable path="ButtonsAndLevels/Levels/Level9"]
+[editable path="ButtonsAndLevels/Levels/Level9/Background"]
+[editable path="ButtonsAndLevels/Levels/Level10"]
+[editable path="ButtonsAndLevels/Levels/Level10/HUD"]
+[editable path="ButtonsAndLevels/Levels/Level10/Background"]

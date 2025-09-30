@@ -10,6 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="6_cnikc"]
 [ext_resource type="PackedScene" uid="uid://cy2tntsdj4jj4" path="res://Scenes/level_6_trap.tscn" id="8_b33os"]
 
+[sub_resource type="Animation" id="Animation_vu5tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_546p8"]
 resource_name = "win_glow"
 length = 0.8
@@ -24,21 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_vu5tt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WinGlow2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnikc"]
@@ -99,31 +99,25 @@ alive = true
 position = Vector2(296, 244)
 scale = Vector2(2.0006423, 2.0006423)
 number = 1
-location = Vector2(296, 244)
 
 [node name="WinArea2" parent="." instance=ExtResource("5_vu5tt")]
 position = Vector2(856, 324)
 scale = Vector2(2.0006423, 2.0006423)
 number = 2
-location = Vector2(856, 324)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Coins" type="Node2D" parent="."]
 
-[node name="Coin" parent="Node2D" instance=ExtResource("6_cnikc")]
+[node name="Coin" parent="Coins" instance=ExtResource("6_cnikc")]
 position = Vector2(276, 344)
-coin_name = "a"
 
-[node name="Coin2" parent="Node2D" instance=ExtResource("6_cnikc")]
+[node name="Coin2" parent="Coins" instance=ExtResource("6_cnikc")]
 position = Vector2(436, 344)
-coin_name = "b"
 
-[node name="Coin3" parent="Node2D" instance=ExtResource("6_cnikc")]
+[node name="Coin3" parent="Coins" instance=ExtResource("6_cnikc")]
 position = Vector2(596, 344)
-coin_name = "c"
 
-[node name="Coin4" parent="Node2D" instance=ExtResource("6_cnikc")]
+[node name="Coin4" parent="Coins" instance=ExtResource("6_cnikc")]
 position = Vector2(756, 344)
-coin_name = "d"
 
 [node name="Traps" type="Node2D" parent="."]
 

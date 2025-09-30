@@ -179,78 +179,58 @@ libraries = {
 }
 
 [node name="WinArea" parent="." instance=ExtResource("5_gfyxx")]
-visible = false
 position = Vector2(276, 104)
 number = 1
-location = Vector2(276, 104)
 
 [node name="WinArea2" parent="." instance=ExtResource("5_gfyxx")]
-visible = false
 position = Vector2(876, 104)
 number = 2
-location = Vector2(876, 104)
 
 [node name="WinArea3" parent="." instance=ExtResource("5_gfyxx")]
-visible = false
 position = Vector2(276, 184)
 number = 3
-location = Vector2(276, 184)
 
 [node name="WinArea4" parent="." instance=ExtResource("5_gfyxx")]
-visible = false
 position = Vector2(676, 264)
 number = 4
-location = Vector2(676, 264)
 
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(476, 344)
-coin_name = "a"
 
 [node name="Coin2" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(496, 344)
-coin_name = "b"
 
 [node name="Coin3" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(516, 344)
-coin_name = "c"
 
 [node name="Coin4" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(536, 344)
-coin_name = "d"
 
 [node name="Coin5" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(556, 344)
-coin_name = "e"
 
 [node name="Coin6" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(576, 344)
-coin_name = "f"
 
 [node name="Coin7" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(596, 344)
-coin_name = "g"
 
 [node name="Coin8" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(616, 344)
-coin_name = "h"
 
 [node name="Coin9" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(636, 344)
-coin_name = "i"
 
 [node name="Coin10" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(656, 344)
-coin_name = "j"
 
 [node name="Coin11" parent="Coins" instance=ExtResource("7_mb3x2")]
 position = Vector2(676, 344)
-coin_name = "k"
 
 [node name="Player" parent="." instance=ExtResource("4_02esc")]
 position = Vector2(276, 104)
-SPEED = 135.0
 alive = true
 
 [node name="Level5Trap" parent="." instance=ExtResource("8_gfyxx")]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=4 uid="uid://d1g7uucs68voo"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_u4qav"]
+[ext_resource type="PackedScene" uid="uid://dd7o4q2xesm0v" path="res://Scenes/level_9.tscn" id="2_a0bmv"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="2_cy2qo"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="3_vaeam"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="4_a0bmv"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="4_vaeam"]
+[ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="5_ry3a7"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="6_cy2qo"]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_u4qav")
+level = 8
+score_required = 10
+next_level = ExtResource("2_a0bmv")
+has_checkpoint = true
+metadata/_edit_vertical_guides_ = [396.0, 636.0]
+metadata/_edit_horizontal_guides_ = [184.0, 304.0, 424.0, 264.0]
+
+[node name="HUD" parent="." instance=ExtResource("2_cy2qo")]
+
+[node name="Background" parent="." instance=ExtResource("3_vaeam")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="1"]
+tile_map_data = PackedByteArray("AAD+/wAAAgABAAAAAAD9////AgABAAAAAAD+//7/AgABAAAAAAABAP//AgABAAAAAAACAP7/AgABAAAAAAABAAEAAgABAAAAAAD8////AgACAAAAAAD+////AgACAAAAAAD+/wEAAgACAAAAAAAAAP//AgACAAAAAAABAP7/AgACAAAAAAADAP7/AgACAAAAAAABAAAAAgACAAAAAAD+/wIAAgABAAAAAAD8/wIAAgABAAAAAAADAAIAAgACAAAAAAABAAIAAgACAAAAAAD9/wIAAgACAAAAAAD7/wMAAgABAAAAAAAEAP3/AgACAAAAAAAAAP3/AgACAAAAAAABAPz/AgACAAAAAAABAAQAAgACAAAAAAADAAQAAgACAAAAAAAEAAMAAgACAAAAAAAEAAEAAgACAAAAAAAEAP//AgACAAAAAAADAPz/AgACAAAAAAABAAMAAgABAAAAAAABAP3/AgABAAAAAAACAPz/AgABAAAAAAAEAPz/AgABAAAAAAAEAP7/AgABAAAAAAAEAAAAAgABAAAAAAAEAAIAAgABAAAAAAAEAAQAAgABAAAAAAACAAQAAgABAAAAAAD///3/AgABAAAAAAD+/wQAAgABAAAAAAD8/wQAAgABAAAAAAD7/wEAAgABAAAAAAD7////AgABAAAAAAD7//3/AgABAAAAAAD8//z/AgABAAAAAAD+//z/AgABAAAAAAD7//z/AgACAAAAAAD9//z/AgACAAAAAAD7//7/AgACAAAAAAD+//3/AgACAAAAAAD7/wAAAgACAAAAAAD7/wIAAgACAAAAAAD7/wQAAgACAAAAAAD9/wQAAgACAAAAAAD+/wMAAgACAAAAAAD//wMAAgABAAAAAAAAAAMAAgACAAAAAAD8//3/AgAAAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="2"]
+offset_left = -160.0
+offset_top = -120.0
+offset_right = -120.0
+offset_bottom = -80.0
+
+[node name="StartGlow" parent="Background" index="3"]
+offset_left = -160.0
+offset_right = -120.0
+offset_bottom = -80.0
+
+[node name="TileMapLayer" parent="Background" index="4"]
+tile_map_data = PackedByteArray("AAD8/wMAAAABAAEAAAAFAAMAAAAAAAAAAAD8//7/AAABAAEAAAD6//3/AAACAAAAAAADAAIAAAABAAEAAAADAP3/AAADAAEAAAD8////AAAFAAIAAAD8/wAAAAAEAAAAAAD8/wEAAAAEAAEAAAD8/wIAAAAFAAIAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD7//3/AAAAAAAAAAD9//7/AAAFAAEAAAD+//7/AAAEAAIAAAD///7/AAAEAAAAAAAAAP7/AAADAAEAAAABAP7/AAAAAAAAAAACAP7/AAAFAAIAAAD9/wMAAAADAAEAAAD+/wMAAAAAAAAAAAD//wMAAAAFAAIAAAAAAAMAAAAFAAIAAAABAAMAAAACAAAAAAACAAMAAAAEAAEAAAAEAP7/AAACAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAEAAIAAAD7/wAAAAAEAAIAAAD7////AAAAAAAAAAD7//7/AAAEAAIAAAD7/wMAAAAEAAIAAAAEAP3/AAAEAAIAAAAEAP//AAAEAAIAAAAEAAAAAAAEAAIAAAAEAAEAAAAEAAIAAAAEAAIAAAACAAAAAAADAAMAAAADAAEAAAD9/wIAAAAFAAIAAAD+/wIAAAACAAAAAAD//wIAAAAEAAEAAAAAAAIAAAAFAAEAAAABAAIAAAAEAAIAAAACAAIAAAAEAAIAAAACAP3/AAABAAEAAAABAP3/AAACAAAAAAAAAP3/AAAFAAIAAAD///3/AAAFAAIAAAD+//3/AAAAAAAAAAD9//3/AAAAAAEAAAD8//3/AAAFAAEAAAADAPz/AAAFAAIAAAAEAPz/AAAFAAAAAAAFAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAAQAAAAAAAAAAAAEAAMAAAAEAAIAAAADAAEAAAAFAAEAAAADAAAAAAACAAAAAAADAP//AAAFAAAAAAADAP7/AAAFAAIAAAD6/wQAAAACAAAAAAD6/wMAAAACAAAAAAD7/wQAAAAEAAEAAAD8/wQAAAAFAAIAAAD6//z/AAACAAAAAAD6//7/AAACAAAAAAD6////AAACAAAAAAD6/wAAAAACAAAAAAD6/wEAAAACAAAAAAD6/wIAAAACAAAAAAD7//z/AAAEAAAAAAABAPz/AAAEAAAAAAACAP//AAAEAAAAAAD//wQAAAAEAAAAAAD+//z/AAAFAAAAAAD9/wAAAAAFAAAAAAAAAAQAAAAFAAAAAAAAAAAAAAAFAAAAAAD+/wQAAAAFAAEAAAAEAAQAAAAFAAEAAAABAAQAAAAEAAEAAAD/////AAAEAAIAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAACAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAADAAQAAAAFAAIAAAACAAQAAAAFAAIAAAD9/wQAAAAFAAIAAAD9////AAAFAAIAAAD9//z/AAAFAAIAAAACAPz/AAAFAAIAAAABAAEAAAAEAAIAAAABAAAAAAAEAAIAAAD+/wEAAAAEAAIAAAD+/wAAAAAEAAIAAAD9/wEAAAAFAAEAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAD+/wUAAAABAAAAAAD9/wUAAAABAAAAAAD8/wUAAAABAAAAAAD7/wUAAAABAAAAAAD7//v/AAADAAAAAAD8//v/AAADAAAAAAD9//v/AAADAAAAAAD+//v/AAADAAAAAAABAPv/AAADAAAAAAACAPv/AAADAAAAAAADAPv/AAADAAAAAAAEAPv/AAADAAAAAAAAAPz/AAAFAAEAAAD///z/AAAEAAEAAAABAP//AAACAAAAAAAAAP//AAABAAEAAAD+////AAACAAAAAAD8//z/AAABAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAAEAAQAAAAAAAIAAAD7//3/AAADAAIAAAD6//v/AAADAAIAAAAAAPv/AAADAAIAAAD///v/AAACAAIAAAAFAPv/AAACAAIAAAD+//z/AAACAAIAAAAEAPz/AAACAAIAAAABAPz/AAADAAIAAAD+//3/AAADAAMAAAABAP3/AAABAAMAAAABAP7/AAADAAMAAAAEAP7/AAABAAMAAAABAP//AAABAAMAAAAEAAIAAAABAAMAAAACAAEAAAADAAIAAAACAAMAAAABAAIAAAD//wAAAAABAAIAAAD///7/AAADAAIAAAAFAAUAAAAAAAIAAAAAAAUAAAABAAIAAAABAAQAAAABAAIAAAABAAMAAAABAAMAAAD//wUAAAAAAAIAAAD+/wIAAAABAAMAAAD+/wMAAAADAAMAAAD+/wQAAAAAAAIAAAD6/wUAAAABAAIAAAD7/wQAAAABAAIAAAD7/wIAAAADAAMAAAD+////AAABAAMAAAD7////AAADAAMAAAD8//z/AAADAAIAAAD9//7/AAAAAAIAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("4_a0bmv")]
+position = Vector2(436, 224)
+alive = true
+
+[node name="WinArea" parent="." instance=ExtResource("4_vaeam")]
+position = Vector2(436, 224)
+number = 1
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(516, 224)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(636, 224)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(756, 224)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(596, 304)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(716, 424)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(756, 504)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(636, 464)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(516, 464)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(396, 464)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_ry3a7")]
+position = Vector2(396, 304)
+
+[node name="Trap" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(396, 184)
+animation = "level_8_first"
+
+[node name="Trap2" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(396, 304)
+animation = "level_8_first"
+
+[node name="Trap3" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(396, 424)
+animation = "level_8_second"
+
+[node name="Trap4" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(636, 184)
+animation = "level_8_second"
+
+[node name="Trap5" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(516, 224)
+animation = "level_8_third"
+
+[node name="Trap6" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(636, 264)
+animation = "level_8_third"
+
+[node name="Trap7" parent="." instance=ExtResource("6_cy2qo")]
+position = Vector2(756, 504)
+animation = "level_8_solo"
+
+[editable path="Background"]
+[editable path="Player"]

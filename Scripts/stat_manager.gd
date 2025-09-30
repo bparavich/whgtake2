@@ -2,7 +2,7 @@ extends Node
 
 var deaths: int = 0
 var died_this_level: bool = false
-var player_position: Vector2 = Vector2.ZERO
+var player_position: Vector2 
 var coins_collected: Array[String] = []
 var checkpoint_score: int = 0
 var has_checkpoint: bool = false

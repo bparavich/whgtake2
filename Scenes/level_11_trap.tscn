@@ -1,0 +1,190 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd3cb4yil6imf"]
+
+[ext_resource type="Script" uid="uid://dgq2x2ft4dq4p" path="res://Scripts/level_11_trap.gd" id="1_gtwot"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="2_ejmbi"]
+
+[sub_resource type="Animation" id="Animation_gtwot"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trap:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ejmbi"]
+resource_name = "rotate"
+length = 2.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trap:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.5707964, -0.16666667, 0.2617994, 0, 0),
+"times": PackedFloat32Array(0, 0.9)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_paye3"]
+_data = {
+&"RESET": SubResource("Animation_gtwot"),
+&"rotate": SubResource("Animation_ejmbi")
+}
+
+[node name="Level11_Trap" type="Node2D"]
+rotation = -1.5704519
+script = ExtResource("1_gtwot")
+metadata/_edit_vertical_guides_ = [40.0]
+metadata/_edit_horizontal_guides_ = [-231.0]
+
+[node name="Trap" type="Node2D" parent="."]
+position = Vector2(0, 5.684342e-14)
+
+[node name="Trap" parent="Trap" instance=ExtResource("2_ejmbi")]
+
+[node name="Trap2" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(19.999998, 0)
+
+[node name="Trap3" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(39.999996, 0)
+
+[node name="Trap4" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(60, 0)
+
+[node name="Trap5" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(79.99999, 0)
+
+[node name="Trap6" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(100, 0)
+
+[node name="Trap7" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(120, 0)
+
+[node name="Trap8" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(139.99998, 0)
+
+[node name="Trap9" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(159.99998, 0)
+
+[node name="Trap10" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(179.99998, 3.7252903e-09)
+
+[node name="Trap11" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(200, 0)
+
+[node name="Trap12" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 19.999998)
+
+[node name="Trap13" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 39.999996)
+
+[node name="Trap14" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 60)
+
+[node name="Trap15" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 79.99999)
+
+[node name="Trap16" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 100)
+
+[node name="Trap17" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 120)
+
+[node name="Trap18" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 139.99998)
+
+[node name="Trap19" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 159.99998)
+
+[node name="Trap20" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-3.7252903e-09, 179.99998)
+
+[node name="Trap21" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, 200)
+
+[node name="Trap22" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(7.450581e-09, 220)
+
+[node name="Trap23" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -19.999998)
+
+[node name="Trap24" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-7.450581e-09, -220)
+
+[node name="Trap25" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -200)
+
+[node name="Trap26" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(3.7252903e-09, -179.99998)
+
+[node name="Trap27" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -159.99998)
+
+[node name="Trap28" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -139.99998)
+
+[node name="Trap29" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -120)
+
+[node name="Trap30" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -100)
+
+[node name="Trap31" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -79.99999)
+
+[node name="Trap32" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -60)
+
+[node name="Trap33" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(0, -39.999996)
+
+[node name="Trap34" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-220, 7.450581e-09)
+
+[node name="Trap35" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-200, 0)
+
+[node name="Trap36" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-179.99998, -3.7252903e-09)
+
+[node name="Trap37" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-159.99998, 0)
+
+[node name="Trap38" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-139.99998, 0)
+
+[node name="Trap39" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-120, 0)
+
+[node name="Trap40" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-100, 0)
+
+[node name="Trap41" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-79.99999, 0)
+
+[node name="Trap42" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-60, 0)
+
+[node name="Trap43" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-39.999996, 0)
+
+[node name="Trap44" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(-19.999998, 0)
+
+[node name="Trap45" parent="Trap" instance=ExtResource("2_ejmbi")]
+position = Vector2(219.99998, -0.07578364)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_paye3")
+}

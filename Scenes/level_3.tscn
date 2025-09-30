@@ -98,21 +98,19 @@ libraries = {
 }
 
 [node name="WinArea" parent="." instance=ExtResource("3_53xsp")]
-position = Vector2(516, 344)
+position = Vector2(576, 344)
 number = 1
 location = Vector2(576, 344)
 
 [node name="CollisionShape2D" parent="WinArea" index="0"]
-position = Vector2(60, 0)
 shape = SubResource("RectangleShape2D_5e78q")
 
 [node name="WinArea2" parent="." instance=ExtResource("3_53xsp")]
-position = Vector2(476, 224)
+position = Vector2(476, 184)
 number = 2
 location = Vector2(476, 184)
 
 [node name="CollisionShape2D" parent="WinArea2" index="0"]
-position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_l4wr6")
 
 [node name="Coins" type="Node2D" parent="."]

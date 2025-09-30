@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=4 uid="uid://td0iagjds7pm"]
+
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="1_5xm85"]
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_i7t2s"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_i7t2s"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="3_pqfbu"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="4_etsvn"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="5_r7uni"]
+
+[node name="Level10" type="Node2D"]
+script = ExtResource("1_i7t2s")
+level = 10
+
+[node name="HUD" parent="." instance=ExtResource("1_5xm85")]
+
+[node name="Background" parent="." instance=ExtResource("2_i7t2s")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="1"]
+tile_map_data = PackedByteArray("AAD+/wAAAgACAAAAAAD8/wAAAgACAAAAAAD9////AgACAAAAAAD+//7/AgACAAAAAAABAP//AgACAAAAAAACAP7/AgACAAAAAAACAAAAAgACAAAAAAADAAEAAgACAAAAAAD9//7/AgABAAAAAAD8/wEAAgABAAAAAAD9/wAAAgABAAAAAAD+////AgABAAAAAAABAP7/AgABAAAAAAACAP//AgABAAAAAAABAAAAAgABAAAAAAADAAAAAgABAAAAAAD+/wIAAgACAAAAAAD8/wIAAgACAAAAAAAAAAIAAgACAAAAAAACAAIAAgACAAAAAAADAAIAAgABAAAAAAABAAIAAgABAAAAAAD//wIAAgABAAAAAAD9/wIAAgABAAAAAAD//wMAAgACAAAAAAABAAMAAgACAAAAAAAAAAMAAgABAAAAAAACAAMAAgABAAAAAAAEAAEAAgABAAAAAAACAP3/AgABAAAAAAABAPz/AgAAAAAAAAACAPz/AgAAAAAAAAACAPv/AgAAAAAAAAABAPv/AgAAAAAAAAAEAAAAAgACAAAAAAAEAAIAAgACAAAAAAD9/wMAAgACAAAAAAD+/wMAAgABAAAAAAD7/wEAAgACAAAAAAD9//3/AgACAAAAAAD7/wIAAgABAAAAAAD7/wAAAgABAAAAAAD+//z/AgAAAAAAAAD+//v/AgAAAAAAAAD9//v/AgAAAAAAAAD9//z/AgAAAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="2"]
+offset_left = 40.0
+offset_top = -200.0
+offset_right = 120.0
+offset_bottom = -120.0
+
+[node name="StartGlow" parent="Background" index="3"]
+offset_left = -120.0
+offset_top = -200.0
+offset_right = -40.0
+offset_bottom = -120.0
+
+[node name="TileMapLayer" parent="Background" index="4"]
+tile_map_data = PackedByteArray("AAD8/wMAAAAFAAAAAAD8//7/AAACAAAAAAADAAIAAAADAAAAAAADAP3/AAAAAAAAAAD8////AAAFAAEAAAD8/wAAAAABAAAAAAD8/wEAAAACAAAAAAD8/wIAAAADAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAFAAAAAAD///7/AAAAAAAAAAAAAP7/AAACAAAAAAABAP7/AAAEAAAAAAACAP7/AAACAAAAAAD9/wMAAAAEAAEAAAD+/wMAAAADAAAAAAD//wMAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAAFAAEAAAD7/wIAAAAEAAEAAAD7/wEAAAAAAAAAAAD7/wAAAAAEAAAAAAD7////AAADAAAAAAD7/wMAAAABAAAAAAAEAP//AAADAAAAAAAEAAAAAAAFAAAAAAAEAAEAAAACAAAAAAAEAAIAAAAFAAEAAAADAAMAAAAEAAAAAAD9/wIAAAABAAAAAAD+/wIAAAABAAAAAAD//wIAAAABAAAAAAAAAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAIAAAABAAAAAAACAP3/AAAEAAIAAAABAP3/AAADAAEAAAD+//3/AAABAAEAAAD9//3/AAAEAAIAAAD8//3/AAACAAAAAAADAPz/AAAAAAAAAAAEAAMAAAABAAAAAAADAAEAAAAAAAAAAAADAAAAAAABAAAAAAADAP//AAAEAAEAAAADAP7/AAAAAAAAAAD6/wAAAAACAAAAAAD6/wEAAAACAAAAAAD6/wIAAAACAAAAAAD9//z/AAAAAAAAAAD9////AAAAAAAAAAABAP//AAAAAAAAAAD9//v/AAAEAAAAAAABAPv/AAAEAAAAAAACAPv/AAAFAAAAAAD+//v/AAAFAAAAAAABAAAAAAAEAAEAAAD+/wAAAAAFAAEAAAD+//z/AAAFAAEAAAABAPz/AAAEAAEAAAACAPz/AAACAAAAAAACAP//AAACAAAAAAACAAAAAAADAAAAAAD+////AAACAAAAAAD9/wAAAAADAAAAAAD9/wQAAAABAAAAAAD+/wQAAAABAAAAAAD//wQAAAABAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAD8//z/AAACAAAAAAD8//v/AAACAAAAAAADAPv/AAAAAAAAAAACAPr/AAADAAAAAAABAPr/AAADAAAAAAD+//r/AAADAAAAAAD9//r/AAADAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAAAAPv/AAACAAAAAAAAAPz/AAACAAAAAAAAAP//AAACAAAAAAAAAAAAAAACAAAAAAACAAEAAAADAAEAAAD9/wEAAAABAAEAAAD+/wEAAAAFAAIAAAABAAEAAAAFAAIAAAD//wEAAAADAAAAAAAAAAEAAAADAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAD6/wMAAAABAAIAAAACAPz/AAACAAIAAAD8/wIAAAABAAIAAAADAAQAAAAAAAIAAAAFAAMAAAAAAAIAAAADAAIAAAAAAAIAAAD//wEAAAAAAAIAAAD9/wAAAAAAAAIAAAACAP7/AAAAAAIAAAD9//7/AAABAAIAAAD8/wQAAAABAAIAAAAAAAEAAAABAAIAAAACAAAAAAABAAIAAAD9//z/AAADAAIAAAD8//r/AAADAAIAAAAAAPr/AAADAAIAAAD///r/AAACAAIAAAADAPr/AAACAAIAAAAAAP3/AAADAAMAAAD///3/AAABAAMAAAD8/wAAAAADAAIAAAD6////AAADAAIAAAAFAP//AAACAAIAAAADAAAAAAACAAIAAAD9/wIAAAACAAIAAAACAAIAAAADAAIAAAA=")
+
+[node name="WinArea" parent="." instance=ExtResource("3_pqfbu")]
+position = Vector2(676, 184)
+number = 1
+
+[node name="Player" parent="." instance=ExtResource("4_etsvn")]
+position = Vector2(496, 164)
+alive = true
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Trap" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(466, 264)
+animation = "level_10_right"
+
+[node name="Trap2" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(526, 304)
+animation = "level_10_left"
+
+[node name="Trap3" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(466, 344)
+animation = "level_10_right"
+
+[node name="Trap4" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(386, 344)
+animation = "level_10_right"
+
+[node name="Trap5" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(446, 384)
+animation = "level_10_left"
+
+[node name="Trap6" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(386, 424)
+animation = "level_10_right"
+
+[node name="Trap7" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(476, 414)
+animation = "level_10_down"
+
+[node name="Trap8" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(556, 414)
+animation = "level_10_down"
+
+[node name="Trap9" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(636, 414)
+animation = "level_10_down"
+
+[node name="Trap10" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(516, 474)
+animation = "level_10_up"
+
+[node name="Trap11" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(596, 474)
+animation = "level_10_up"
+
+[node name="Trap12" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(676, 474)
+animation = "level_10_up"
+
+[node name="Trap13" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(706, 424)
+animation = "level_10_right"
+
+[node name="Trap14" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(766, 384)
+animation = "level_10_left"
+
+[node name="Trap15" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(706, 344)
+animation = "level_10_right"
+
+[node name="Trap16" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(626, 344)
+animation = "level_10_right"
+
+[node name="Trap17" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(686, 304)
+animation = "level_10_left"
+
+[node name="Trap18" parent="Traps" instance=ExtResource("5_r7uni")]
+position = Vector2(626, 264)
+animation = "level_10_right"
+
+[editable path="HUD"]
+[editable path="Background"]

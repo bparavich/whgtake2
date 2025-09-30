@@ -36,6 +36,22 @@ func _on_mute_pressed() -> void:
 		StatManager.muted = false
 		
 func _on_main_menu_pressed():
+	reset()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
+func _on_level_select_pressed():
+	reset()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
+	
+func change_un_color_yellow():
+	$UI/UN.add_theme_color_override("font_color", Color(0.871, 0.867, 0.0, 1.0))
+	
+func change_un_color_white():
+	$UI/UN.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+	
+func reset():
 	StatManager.deaths = 0
 	StatManager.died_this_level = false
 	StatManager.player_position = Vector2.ZERO
@@ -45,15 +61,3 @@ func _on_main_menu_pressed():
 	StatManager.check_number = 0
 	StatManager.is_reloading_scene = false
 	StatManager.muted = false
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-	
-func _on_level_select_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
-	
-func change_un_color_yellow():
-	$UI/UN.add_theme_color_override("font_color", Color(0.871, 0.867, 0.0, 1.0))
-	
-func change_un_color_white():
-	$UI/UN.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
