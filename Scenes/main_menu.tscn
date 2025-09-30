@@ -6,30 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_opfnp"]
 [ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="3_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://bpixvpeh68ksa" path="res://Assets/Textures/level1.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://bvgrog4100jaf" path="res://Assets/Textures/play2.png" id="3_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://d78qur4d32y4" path="res://Assets/Textures/level2.png" id="5_yhxw7"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
+texture = ExtResource("2_ce3w2")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
+texture = ExtResource("3_yhxw7")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+texture = ExtResource("3_n45e2")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cp0ys"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhxw7"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
+texture = ExtResource("5_yhxw7")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -43,13 +33,13 @@ script = ExtResource("1_48xlc")
 [node name="Background" parent="." instance=ExtResource("2_opfnp")]
 position = Vector2(576, 324)
 
-[node name="floor" parent="Background" index="2"]
+[node name="floor" parent="Background" index="1"]
 visible = false
 
-[node name="TileMapLayer" parent="Background" index="5"]
+[node name="TileMapLayer" parent="Background" index="4"]
 visible = false
 
-[node name="TileMapLayer2" parent="Background" index="6"]
+[node name="TileMapLayer2" parent="Background" index="5"]
 visible = false
 
 [node name="PlayGame" type="Button" parent="."]
@@ -58,10 +48,10 @@ offset_left = 300.0
 offset_top = 359.0
 offset_right = 496.0
 offset_bottom = 522.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_n45e2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_opfnp")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ce3w2")
-icon = ExtResource("2_ce3w2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cp0ys")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+icon_alignment = 1
+expand_icon = true
 
 [node name="LevelSelect" type="Button" parent="."]
 layout_mode = 0
@@ -69,10 +59,10 @@ offset_left = 656.0
 offset_top = 359.0
 offset_right = 852.0
 offset_bottom = 522.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_opfnp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_cp0ys")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yhxw7")
-icon = ExtResource("3_n45e2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_trj04")
+icon_alignment = 1
+expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -85,7 +75,7 @@ texture = ExtResource("1_28flt")
 
 [node name="HUD" parent="." instance=ExtResource("3_cp0ys")]
 
-[node name="UI" parent="HUD" index="0"]
+[node name="UI" parent="HUD" index="2"]
 mouse_filter = 2
 
 [node name="Level" parent="HUD/UI" index="0"]

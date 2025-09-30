@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://wm5of4pml2ev"]
+[gd_scene load_steps=40 format=4 uid="uid://wm5of4pml2ev"]
 
 [ext_resource type="PackedScene" uid="uid://bm0h40yuv040c" path="res://Scenes/level_1.tscn" id="1_1fiak"]
 [ext_resource type="Script" uid="uid://by6sgsahjjet0" path="res://Scripts/level_select.gd" id="1_72w8f"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://d1g7uucs68voo" path="res://Scenes/level_8.tscn" id="12_07bvh"]
 [ext_resource type="PackedScene" uid="uid://dd7o4q2xesm0v" path="res://Scenes/level_9.tscn" id="13_ciagn"]
 [ext_resource type="PackedScene" uid="uid://td0iagjds7pm" path="res://Scenes/level_10.tscn" id="14_07bvh"]
+[ext_resource type="PackedScene" uid="uid://dl42nq2nbdnie" path="res://Scenes/level_11.tscn" id="15_ciagn"]
+[ext_resource type="PackedScene" uid="uid://dkefm1u3hllfc" path="res://Scenes/level_12.tscn" id="16_yx562"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb5mc"]
 
@@ -228,7 +230,7 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_72w8f")
-metadata/_edit_vertical_guides_ = [482.0, 670.0]
+metadata/_edit_vertical_guides_ = [482.0, 670.0, 849.0]
 metadata/_edit_horizontal_guides_ = [348.0, 313.0]
 
 [node name="Background" parent="." instance=ExtResource("2_kb5mc")]
@@ -438,7 +440,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_y1k4n")
 text = "LEVEL 11"
 
 [node name="Level12b" parent="ButtonsAndLevels/Panels" instance=ExtResource("4_x038j")]
-visible = false
 layout_mode = 0
 offset_left = 945.0
 offset_top = 261.0
@@ -778,6 +779,48 @@ visible = false
 [node name="Player" parent="ButtonsAndLevels/Levels/Level10" index="3"]
 alive = false
 
+[node name="Level11" parent="ButtonsAndLevels/Levels" instance=ExtResource("15_ciagn")]
+position = Vector2(746, 250.99998)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level11" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level11/Background" index="0"]
+visible = false
+
+[node name="floor" parent="ButtonsAndLevels/Levels/Level11/Background" index="1"]
+tile_map_data = PackedByteArray("AAD/////AgABAAAAAAAAAAAAAgABAAAAAAAAAP7/AgABAAAAAAD//wEAAgABAAAAAAD+/wAAAgABAAAAAAD9/wEAAgABAAAAAAD8/wAAAgABAAAAAAD8//7/AgABAAAAAAD9////AgABAAAAAAD+//7/AgABAAAAAAABAP//AgABAAAAAAACAP7/AgABAAAAAAADAP//AgABAAAAAAACAAAAAgABAAAAAAABAAEAAgABAAAAAAADAAEAAgABAAAAAAAAAAEAAgACAAAAAAD//wAAAgACAAAAAAD///7/AgACAAAAAAD9//7/AgACAAAAAAD8////AgACAAAAAAD8/wEAAgACAAAAAAD9/wAAAgACAAAAAAD+////AgACAAAAAAD+/wEAAgACAAAAAAAAAP//AgACAAAAAAABAP7/AgACAAAAAAADAP7/AgACAAAAAAACAP//AgACAAAAAAABAAAAAgACAAAAAAACAAEAAgACAAAAAAADAAAAAgACAAAAAAD+/wIAAgABAAAAAAD8/wIAAgABAAAAAAAAAAIAAgABAAAAAAACAAIAAgABAAAAAAADAAIAAgACAAAAAAABAAIAAgACAAAAAAD//wIAAgACAAAAAAD9/wIAAgACAAAAAAADAP3/AgABAAAAAAD8/wMAAgACAAAAAAAEAP3/AgACAAAAAAAFAP3/AgABAAAAAAAHAP3/AgABAAAAAAAGAP3/AgACAAAAAAAHAP7/AgACAAAAAAAHAP//AgABAAAAAAAHAAAAAgAAAAAAAAAHAAEAAgAAAAAAAAD6/wEAAgACAAAAAAD4////AgAAAAAAAAD4/wAAAgAAAAAAAAD4/wEAAgAAAAAAAAD5/wEAAgAAAAAAAAD5/wAAAgAAAAAAAAD5////AgAAAAAAAAD//wMAAgABAAAAAAD//wQAAgACAAAAAAAAAAMAAgACAAAAAAAAAAQAAgABAAAAAAD9/wQAAgACAAAAAAD+/wMAAgACAAAAAAD8//3/AgACAAAAAAD9//z/AgACAAAAAAD///z/AgACAAAAAAABAPz/AgACAAAAAAADAPz/AgACAAAAAAAFAPz/AgACAAAAAAAHAPz/AgACAAAAAAAIAPz/AgABAAAAAAAIAP7/AgABAAAAAAAGAPz/AgABAAAAAAAEAPz/AgABAAAAAAACAPz/AgABAAAAAAABAP3/AgABAAAAAAAAAPz/AgABAAAAAAD///3/AgABAAAAAAD+//z/AgABAAAAAAD9//3/AgABAAAAAAD8//z/AgABAAAAAAAEAP7/AgABAAAAAAAEAAAAAgABAAAAAAAEAAIAAgABAAAAAAADAAMAAgABAAAAAAAEAAQAAgABAAAAAAACAAQAAgABAAAAAAABAAMAAgABAAAAAAD8/wQAAgABAAAAAAD9/wMAAgABAAAAAAD+/wQAAgABAAAAAAABAAQAAgACAAAAAAACAAMAAgACAAAAAAAEAAMAAgACAAAAAAADAAQAAgACAAAAAAAEAAEAAgACAAAAAAAEAP//AgACAAAAAAAAAP3/AgACAAAAAAD+//3/AgACAAAAAAACAP3/AgACAAAAAAAIAP3/AgACAAAAAAAIAP//AgACAAAAAAAIAAAAAgAAAAAAAAAIAAEAAgAAAAAAAAD7/wEAAgABAAAAAAD3/wEAAgAAAAAAAAD3/wAAAgAAAAAAAAD3////AgAAAAAAAAA=")
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level11/Background" index="4"]
+visible = false
+tile_map_data = PackedByteArray("AAD8/wMAAAAAAAAAAAAFAAMAAAAAAAAAAAD8//7/AAAAAAAAAAD4/wIAAAABAAAAAAD4/wEAAAADAAAAAAD4////AAABAAAAAAD4//7/AAADAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wIAAAAAAAAAAAAFAP7/AAAEAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAIAP7/AAACAAAAAAAIAP//AAACAAAAAAAIAAAAAAACAAAAAAAIAAEAAAAFAAEAAAAIAAIAAAABAAAAAAAIAP3/AAACAAAAAAD7//3/AAACAAAAAAAEAP7/AAACAAAAAAD7/wIAAAAFAAAAAAD7/wEAAAAFAAIAAAD7/wAAAAAFAAEAAAD7////AAACAAAAAAD7//7/AAACAAAAAAD7/wMAAAACAAAAAAAEAP//AAACAAAAAAAEAAAAAAACAAAAAAAEAAEAAAACAAAAAAAEAAIAAAACAAAAAAD8//3/AAAAAAAAAAADAPz/AAABAAAAAAAEAPz/AAABAAAAAAAFAPz/AAABAAAAAAAGAPz/AAABAAAAAAAHAPz/AAABAAAAAAAFAP3/AAADAAAAAAAGAP3/AAADAAAAAAAHAP7/AAAAAAAAAAAHAP//AAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAEAAEAAAAHAAIAAAABAAAAAAAFAAQAAAAAAAAAAAAEAAMAAAACAAAAAAD7/wQAAAACAAAAAAD8/wQAAAAEAAEAAAD3/wEAAAAEAAEAAAD3/wIAAAABAAAAAAD3/wAAAAAAAAAAAAD3////AAAEAAAAAAD3//7/AAADAAAAAAD6////AAAAAAAAAAD6/wAAAAAEAAEAAAD6/wEAAAAFAAIAAAD6/wIAAAABAAAAAAD8//z/AAAEAAAAAAAGAP7/AAAFAAAAAAAIAPz/AAAFAAAAAAD5////AAAFAAAAAAAEAAQAAAAFAAEAAAAJAP3/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAPz/AAAAAAAAAAD5/wAAAAACAAAAAAD5/wEAAAADAAAAAAD5//7/AAADAAAAAAD2////AAACAAAAAAD2/wAAAAACAAAAAAD2/wEAAAACAAAAAAD5/wIAAAABAAAAAAD8/wUAAAABAAAAAAD9/wUAAAABAAAAAAD+/wUAAAABAAAAAAD//wUAAAABAAAAAAAAAAUAAAABAAAAAAABAAUAAAABAAAAAAACAAUAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAD9/wQAAAADAAAAAAD+/wQAAAADAAAAAAD//wQAAAADAAAAAAAAAAQAAAADAAAAAAABAAQAAAADAAAAAAACAAQAAAADAAAAAAADAAQAAAADAAAAAAAGAAAAAAACAAAAAAAGAP//AAACAAAAAAAGAAEAAAACAAAAAAD8//v/AAADAAAAAAD9//v/AAADAAAAAAD+//v/AAADAAAAAAD///v/AAADAAAAAAAAAPv/AAADAAAAAAABAPv/AAADAAAAAAACAPv/AAADAAAAAAADAPv/AAADAAAAAAAEAPv/AAADAAAAAAAFAPv/AAADAAAAAAAGAPv/AAADAAAAAAAHAPv/AAADAAAAAAAIAPv/AAADAAAAAAACAPz/AAABAAAAAAABAPz/AAABAAAAAAAAAPz/AAABAAAAAAD///z/AAABAAAAAAD+//z/AAABAAAAAAD9//z/AAABAAAAAAD7//z/AAACAAAAAAA=")
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level11/Background" index="5"]
+visible = false
+
+[node name="WinArea" parent="ButtonsAndLevels/Levels/Level11" index="2"]
+visible = false
+
+[node name="Player" parent="ButtonsAndLevels/Levels/Level11" index="3"]
+alive = false
+
+[node name="Level12" parent="ButtonsAndLevels/Levels" instance=ExtResource("16_yx562")]
+position = Vector2(928.00006, 253.99998)
+scale = Vector2(0.18, 0.18)
+
+[node name="HUD" parent="ButtonsAndLevels/Levels/Level12" index="0"]
+visible = false
+
+[node name="Black2" parent="ButtonsAndLevels/Levels/Level12/Background" index="0"]
+visible = false
+
+[node name="TileMapLayer" parent="ButtonsAndLevels/Levels/Level12/Background" index="4"]
+visible = false
+
+[node name="TileMapLayer2" parent="ButtonsAndLevels/Levels/Level12/Background" index="5"]
+visible = false
+
 [connection signal="pressed" from="HUD/mm" to="." method="_on_mm_pressed"]
 
 [editable path="Background"]
@@ -827,3 +870,7 @@ alive = false
 [editable path="ButtonsAndLevels/Levels/Level10"]
 [editable path="ButtonsAndLevels/Levels/Level10/HUD"]
 [editable path="ButtonsAndLevels/Levels/Level10/Background"]
+[editable path="ButtonsAndLevels/Levels/Level11"]
+[editable path="ButtonsAndLevels/Levels/Level11/Background"]
+[editable path="ButtonsAndLevels/Levels/Level12"]
+[editable path="ButtonsAndLevels/Levels/Level12/Background"]

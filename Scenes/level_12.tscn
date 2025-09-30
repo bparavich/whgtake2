@@ -1,3 +1,664 @@
-[gd_scene format=3 uid="uid://dkefm1u3hllfc"]
+[gd_scene load_steps=15 format=4 uid="uid://dkefm1u3hllfc"]
+
+[ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_folg6"]
+[ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="1_jtjvl"]
+[ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_c6h0k"]
+[ext_resource type="PackedScene" uid="uid://oeeqtt33gyw1" path="res://Scenes/win_glow.tscn" id="3_c0f84"]
+[ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="4_folg6"]
+[ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="5_c0f84"]
+[ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="5_q24p2"]
+[ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="6_folg6"]
+
+[sub_resource type="Animation" id="Animation_jtjvl"]
+resource_name = "win_glow"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c6h0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0f84"]
+_data = {
+&"RESET": SubResource("Animation_c6h0k"),
+&"win_glow": SubResource("Animation_jtjvl")
+}
+
+[sub_resource type="Animation" id="Animation_folg6"]
+resource_name = "win_glow"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q24p2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8rem"]
+_data = {
+&"RESET": SubResource("Animation_q24p2"),
+&"win_glow": SubResource("Animation_folg6")
+}
 
 [node name="Level12" type="Node2D"]
+script = ExtResource("1_folg6")
+level = 12
+score_required = 3
+has_checkpoint = true
+
+[node name="HUD" parent="." instance=ExtResource("1_jtjvl")]
+
+[node name="Background" parent="." instance=ExtResource("2_c6h0k")]
+position = Vector2(576, 324)
+
+[node name="floor" parent="Background" index="1"]
+tile_map_data = PackedByteArray("AAD/////AgACAAAAAAAAAAAAAgACAAAAAAAAAP7/AgACAAAAAAD//wEAAgACAAAAAAD+/wAAAgACAAAAAAD9/wEAAgACAAAAAAD8/wAAAgACAAAAAAD8//7/AgACAAAAAAD9////AgACAAAAAAD+//7/AgACAAAAAAABAP//AgACAAAAAAACAAAAAgACAAAAAAABAAEAAgACAAAAAAADAAEAAgACAAAAAAAAAAEAAgABAAAAAAD//wAAAgABAAAAAAD///7/AgABAAAAAAD9//7/AgABAAAAAAD8////AgABAAAAAAD8/wEAAgABAAAAAAD9/wAAAgABAAAAAAD+////AgABAAAAAAD+/wEAAgABAAAAAAAAAP//AgABAAAAAAABAP7/AgABAAAAAAABAAAAAgABAAAAAAACAAEAAgABAAAAAAADAAAAAgABAAAAAAD+/wIAAgACAAAAAAD8/wIAAgACAAAAAAAAAAIAAgACAAAAAAACAAIAAgACAAAAAAADAAIAAgABAAAAAAABAAIAAgABAAAAAAD//wIAAgABAAAAAAD9/wIAAgABAAAAAAD7/wMAAgACAAAAAAD8/wMAAgABAAAAAAAFAAAAAgABAAAAAAAFAAEAAgAAAAAAAAAFAAIAAgAAAAAAAAAFAAMAAgACAAAAAAAGAAMAAgABAAAAAAAHAAMAAgACAAAAAAAHAAAAAgABAAAAAAAHAAEAAgACAAAAAAAHAAIAAgABAAAAAAAGAAAAAgACAAAAAAAGAAEAAgAAAAAAAAAGAAIAAgAAAAAAAAD6/wMAAgABAAAAAAD6/wIAAgAAAAAAAAD6/wEAAgAAAAAAAAD6/wAAAgACAAAAAAD6////AgABAAAAAAD6//7/AgACAAAAAAD6//3/AgAAAAAAAAD5//3/AgAAAAAAAAD4//3/AgABAAAAAAD4//7/AgACAAAAAAD4////AgABAAAAAAD4/wAAAgACAAAAAAD4/wEAAgABAAAAAAD4/wIAAgACAAAAAAD4/wMAAgABAAAAAAD5/wMAAgACAAAAAAD5/wIAAgAAAAAAAAD5/wEAAgAAAAAAAAD5/wAAAgABAAAAAAD5////AgACAAAAAAD5//7/AgABAAAAAAD//wMAAgACAAAAAAABAAMAAgACAAAAAAAAAPz/AgACAAAAAAABAPv/AgACAAAAAAABAP3/AgACAAAAAAAEAAAAAgACAAAAAAADAAMAAgACAAAAAAAEAAIAAgACAAAAAAD9/wMAAgACAAAAAAD5//v/AgACAAAAAAD7//v/AgACAAAAAAD9//v/AgACAAAAAAD///v/AgACAAAAAAD+//z/AgACAAAAAAD8//z/AgACAAAAAAD7/wEAAgACAAAAAAD7/wIAAgABAAAAAAD6//z/AgAAAAAAAAD7//z/AgABAAAAAAD7//3/AgACAAAAAAD9//3/AgACAAAAAAD7////AgACAAAAAAD6//v/AgABAAAAAAD5//z/AgAAAAAAAAD7//7/AgABAAAAAAD8//3/AgABAAAAAAD8//v/AgABAAAAAAD9//z/AgABAAAAAAD+//v/AgABAAAAAAAAAPv/AgABAAAAAAABAPz/AgABAAAAAAD///z/AgABAAAAAAD+//3/AgABAAAAAAAAAP3/AgABAAAAAAAEAAMAAgABAAAAAAAEAAEAAgABAAAAAAACAAMAAgABAAAAAAAAAAMAAgABAAAAAAD///3/AgACAAAAAAD7/wAAAgABAAAAAAD+/wMAAgABAAAAAAD4//z/AgACAAAAAAD4//v/AgABAAAAAAA=")
+
+[node name="WinGlow" parent="Background" index="2"]
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 120.0
+
+[node name="StartGlow" parent="Background" index="3"]
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 120.0
+
+[node name="TileMapLayer" parent="Background" index="4"]
+tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD4/wMAAAAEAAEAAAAFAAMAAAADAAAAAAD4//3/AAAAAAAAAAAHAAMAAAAFAAEAAAD4/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wAAAAAAAAAAAAD4////AAAAAAAAAAD4//7/AAAAAAAAAAAFAP//AAADAAAAAAAFAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAABAP7/AAACAAAAAAACAP7/AAAAAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAD7/wMAAAADAAAAAAAEAP//AAADAAAAAAAEAAAAAAABAAAAAAADAAMAAAADAAAAAAACAP3/AAAAAAAAAAABAP3/AAACAAAAAAAHAP//AAADAAAAAAAHAAAAAAAFAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAHAAQAAAABAAAAAAAGAAMAAAADAAAAAAAEAAMAAAADAAAAAAADAAAAAAABAAAAAAADAP//AAADAAAAAAD4/wQAAAABAAAAAAD5/wQAAAABAAAAAAD6/wQAAAABAAAAAAD6/wMAAAADAAAAAAD5/wMAAAADAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD3/wEAAAACAAAAAAD3/wIAAAACAAAAAAD3/wMAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAD3//7/AAACAAAAAAD3//3/AAACAAAAAAD4//z/AAAAAAAAAAABAPv/AAAFAAAAAAACAP//AAAEAAEAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAD9/wQAAAABAAAAAAD+/wQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAABAAQAAAABAAAAAAAAAAQAAAABAAAAAAD//wQAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAADAAAAAAACAAAAAAABAAAAAAABAPz/AAACAAAAAAABAP//AAACAAAAAAACAPz/AAAAAAAAAAACAPv/AAAAAAAAAAD6//r/AAADAAAAAAD7//r/AAADAAAAAAD8//r/AAADAAAAAAD9//r/AAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAAAAPr/AAADAAAAAAABAPr/AAADAAAAAAD4//v/AAAEAAAAAAD5//v/AAABAAAAAAD5//r/AAADAAAAAAD4//r/AAADAAAAAAD3//v/AAACAAAAAAD3//z/AAACAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="5"]
+tile_map_data = PackedByteArray("AAAIAAQAAAAAAAIAAAD3/wQAAAABAAIAAAABAAAAAAABAAIAAAAIAP//AAACAAIAAAACAPr/AAACAAIAAAD3//r/AAADAAIAAAA=")
+
+[node name="WinGlow2" parent="Background" instance=ExtResource("3_c0f84")]
+visible = false
+offset_left = -280.0
+offset_top = -160.0
+offset_right = -200.0
+offset_bottom = -80.0
+
+[node name="WinGlow3" parent="Background" instance=ExtResource("3_c0f84")]
+visible = false
+offset_left = -280.0
+offset_top = 40.0
+offset_right = -200.0
+offset_bottom = 120.0
+
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_c0f84")
+}
+
+[node name="GlowAnimation3" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_x8rem")
+}
+
+[node name="Player" parent="." instance=ExtResource("5_q24p2")]
+position = Vector2(816, 404)
+alive = true
+
+[node name="WinArea" parent="." instance=ExtResource("4_folg6")]
+position = Vector2(816, 404)
+scale = Vector2(2, 2)
+number = 1
+
+[node name="WinArea2" parent="." instance=ExtResource("4_folg6")]
+position = Vector2(336, 204)
+scale = Vector2(2, 2)
+number = 2
+
+[node name="WinArea3" parent="." instance=ExtResource("4_folg6")]
+position = Vector2(336, 404)
+scale = Vector2(2, 2)
+number = 3
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_c0f84")]
+position = Vector2(516, 304)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_c0f84")]
+position = Vector2(496, 304)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_c0f84")]
+position = Vector2(476, 304)
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Trap" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 154)
+
+[node name="Trap2" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(306, 154)
+
+[node name="Trap3" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(326, 154)
+
+[node name="Trap4" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 154)
+
+[node name="Trap5" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(366, 154)
+
+[node name="Trap6" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 154)
+
+[node name="Trap7" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 154)
+
+[node name="Trap8" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 154)
+
+[node name="Trap64" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 454)
+
+[node name="Trap65" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(306, 454)
+
+[node name="Trap66" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(326, 454)
+
+[node name="Trap67" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 454)
+
+[node name="Trap68" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(366, 454)
+
+[node name="Trap69" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 454)
+
+[node name="Trap70" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 454)
+
+[node name="Trap89" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 434)
+
+[node name="Trap91" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 414)
+
+[node name="Trap90" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 434)
+
+[node name="Trap92" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(306, 354)
+
+[node name="Trap93" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(326, 354)
+
+[node name="Trap94" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(306, 334)
+
+[node name="Trap95" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(326, 334)
+
+[node name="Trap71" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 454)
+
+[node name="Trap72" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 454)
+
+[node name="Trap73" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 454)
+
+[node name="Trap74" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 454)
+
+[node name="Trap46" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(706, 454)
+
+[node name="Trap47" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(726, 454)
+
+[node name="Trap48" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(746, 454)
+
+[node name="Trap49" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(766, 454)
+
+[node name="Trap50" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(786, 454)
+
+[node name="Trap51" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(806, 454)
+
+[node name="Trap52" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(826, 454)
+
+[node name="Trap53" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(846, 454)
+
+[node name="Trap9" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 174)
+
+[node name="Trap10" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 194)
+
+[node name="Trap11" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 314)
+
+[node name="Trap12" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 294)
+
+[node name="Trap13" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 274)
+
+[node name="Trap14" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 254)
+
+[node name="Trap15" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 234)
+
+[node name="Trap16" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 214)
+
+[node name="Trap17" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 194)
+
+[node name="Trap40" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 454)
+
+[node name="Trap41" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 434)
+
+[node name="Trap42" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 414)
+
+[node name="Trap43" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 394)
+
+[node name="Trap44" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 374)
+
+[node name="Trap45" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(866, 354)
+
+[node name="Trap18" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 174)
+
+[node name="Trap19" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 154)
+
+[node name="Trap20" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(606, 154)
+
+[node name="Trap21" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(586, 154)
+
+[node name="Trap22" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 154)
+
+[node name="Trap23" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 154)
+
+[node name="Trap24" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 154)
+
+[node name="Trap25" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 174)
+
+[node name="Trap26" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 194)
+
+[node name="Trap60" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 414)
+
+[node name="Trap61" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 434)
+
+[node name="Trap62" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 454)
+
+[node name="Trap63" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 454)
+
+[node name="Trap27" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 334)
+
+[node name="Trap28" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 354)
+
+[node name="Trap75" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 334)
+
+[node name="Trap76" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 314)
+
+[node name="Trap77" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 294)
+
+[node name="Trap78" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 274)
+
+[node name="Trap79" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 254)
+
+[node name="Trap154" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 234)
+
+[node name="Trap155" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 214)
+
+[node name="Trap80" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 234)
+
+[node name="Trap81" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 214)
+
+[node name="Trap82" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 194)
+
+[node name="Trap83" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 174)
+
+[node name="Trap84" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 354)
+
+[node name="Trap96" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(366, 354)
+
+[node name="Trap97" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 354)
+
+[node name="Trap98" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(366, 334)
+
+[node name="Trap99" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 334)
+
+[node name="Trap100" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 334)
+
+[node name="Trap101" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 354)
+
+[node name="Trap102" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 354)
+
+[node name="Trap103" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 354)
+
+[node name="Trap124" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 374)
+
+[node name="Trap104" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 334)
+
+[node name="Trap105" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 334)
+
+[node name="Trap106" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 334)
+
+[node name="Trap126" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 314)
+
+[node name="Trap107" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 354)
+
+[node name="Trap108" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 354)
+
+[node name="Trap109" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 354)
+
+[node name="Trap110" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 334)
+
+[node name="Trap111" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 334)
+
+[node name="Trap127" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 314)
+
+[node name="Trap128" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 314)
+
+[node name="Trap129" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 294)
+
+[node name="Trap130" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 294)
+
+[node name="Trap131" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 274)
+
+[node name="Trap132" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 274)
+
+[node name="Trap133" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 254)
+
+[node name="Trap134" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 254)
+
+[node name="Trap135" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(546, 234)
+
+[node name="Trap136" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 234)
+
+[node name="Trap137" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(566, 214)
+
+[node name="Trap114" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 354)
+
+[node name="Trap125" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 374)
+
+[node name="Trap115" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 354)
+
+[node name="Trap116" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 334)
+
+[node name="Trap117" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 334)
+
+[node name="Trap112" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 334)
+
+[node name="Trap113" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 354)
+
+[node name="Trap118" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 334)
+
+[node name="Trap119" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 354)
+
+[node name="Trap138" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(366, 254)
+
+[node name="Trap139" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(386, 254)
+
+[node name="Trap140" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 254)
+
+[node name="Trap141" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(346, 274)
+
+[node name="Trap142" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 254)
+
+[node name="Trap143" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 254)
+
+[node name="Trap144" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 254)
+
+[node name="Trap145" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(406, 234)
+
+[node name="Trap146" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 274)
+
+[node name="Trap147" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 274)
+
+[node name="Trap148" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 254)
+
+[node name="Trap149" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 254)
+
+[node name="Trap150" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 254)
+
+[node name="Trap151" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 274)
+
+[node name="Trap152" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 254)
+
+[node name="Trap153" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 274)
+
+[node name="Trap120" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 374)
+
+[node name="Trap121" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(466, 394)
+
+[node name="Trap122" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 374)
+
+[node name="Trap123" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(486, 394)
+
+[node name="Trap85" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 374)
+
+[node name="Trap86" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 394)
+
+[node name="Trap87" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 414)
+
+[node name="Trap88" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(286, 434)
+
+[node name="Trap29" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(646, 354)
+
+[node name="Trap30" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(666, 354)
+
+[node name="Trap54" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(666, 454)
+
+[node name="Trap55" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(686, 454)
+
+[node name="Trap31" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(686, 374)
+
+[node name="Trap56" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(586, 414)
+
+[node name="Trap57" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(606, 414)
+
+[node name="Trap58" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(626, 414)
+
+[node name="Trap59" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(646, 434)
+
+[node name="Trap32" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(706, 394)
+
+[node name="Trap33" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(726, 394)
+
+[node name="Trap34" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(746, 374)
+
+[node name="Trap35" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(766, 374)
+
+[node name="Trap36" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(786, 354)
+
+[node name="Trap37" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(806, 354)
+
+[node name="Trap38" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(826, 354)
+
+[node name="Trap39" parent="Traps" instance=ExtResource("6_folg6")]
+position = Vector2(846, 354)
+
+[node name="AnimatedTraps" type="Node2D" parent="."]
+
+[node name="Trap" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(426, 134)
+animation = "level_12_down"
+
+[node name="Trap2" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(446, 134)
+animation = "level_12_down"
+
+[node name="Trap3" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(606, 134)
+animation = "level_12_down"
+
+[node name="Trap4" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(586, 134)
+animation = "level_12_down"
+
+[node name="Trap5" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(506, 474)
+animation = "level_12_up"
+
+[node name="Trap6" parent="AnimatedTraps" instance=ExtResource("6_folg6")]
+position = Vector2(526, 474)
+animation = "level_12_up"
+
+[editable path="Background"]
