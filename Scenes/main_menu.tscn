@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi3upusydnj2l"]
+[gd_scene load_steps=19 format=3 uid="uid://bi3upusydnj2l"]
 
 [ext_resource type="Texture2D" uid="uid://54hydbjk01cl" path="res://Assets/Textures/Untitled-1.png" id="1_28flt"]
 [ext_resource type="Script" uid="uid://dlgpf6ligvqm7" path="res://Scripts/main_menu.gd" id="1_48xlc"]
@@ -12,14 +12,28 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cp0ys"]
 texture = ExtResource("2_ce3w2")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16hvj"]
+texture = ExtResource("3_yhxw7")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
 texture = ExtResource("3_yhxw7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yhxw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trj04"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
 texture = ExtResource("3_n45e2")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vr1f0"]
+texture = ExtResource("5_yhxw7")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trj04"]
 texture = ExtResource("5_yhxw7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1dhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5egv6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,7 +63,10 @@ offset_top = 359.0
 offset_right = 496.0
 offset_bottom = 522.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_cp0ys")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16hvj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yhxw7")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trj04")
 icon_alignment = 1
 expand_icon = true
 
@@ -60,7 +77,10 @@ offset_top = 359.0
 offset_right = 852.0
 offset_bottom = 522.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_yhxw7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vr1f0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_trj04")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t1dhk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5egv6")
 icon_alignment = 1
 expand_icon = true
 

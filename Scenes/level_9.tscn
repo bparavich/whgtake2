@@ -10,6 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="5_basfb"]
 [ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="6_frqt4"]
 
+[sub_resource type="Animation" id="Animation_066uc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_qv3nj"]
 resource_name = "win_glow"
 length = 0.8
@@ -26,12 +41,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_066uc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exqje"]
+_data = {
+&"RESET": SubResource("Animation_066uc"),
+&"win_glow": SubResource("Animation_qv3nj")
+}
+
+[sub_resource type="Animation" id="Animation_frqt4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/path = NodePath("WinGlow3:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -39,12 +60,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_exqje"]
-_data = {
-&"RESET": SubResource("Animation_066uc"),
-&"win_glow": SubResource("Animation_qv3nj")
 }
 
 [sub_resource type="Animation" id="Animation_basfb"]
@@ -61,21 +76,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_frqt4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WinGlow3:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f7d2o"]
@@ -112,12 +112,12 @@ offset_top = -200.0
 offset_right = -240.0
 offset_bottom = -120.0
 
-[node name="WinGlow2" parent="Background" instance=ExtResource("3_qv3nj")]
+[node name="WinGlow2" parent="Background" groups=["win_glow"] instance=ExtResource("3_qv3nj")]
 visible = false
 offset_right = 80.0
 offset_bottom = 80.0
 
-[node name="WinGlow3" parent="Background" instance=ExtResource("3_qv3nj")]
+[node name="WinGlow3" parent="Background" groups=["win_glow"] instance=ExtResource("3_qv3nj")]
 visible = false
 offset_left = 240.0
 offset_top = -80.0
@@ -130,12 +130,12 @@ tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD4/wMAAAAEAAEAAAAFAAMAAAADAAA
 [node name="TileMapLayer2" parent="Background" index="7"]
 tile_map_data = PackedByteArray("AAAIAAQAAAAAAAIAAAD3/wQAAAABAAIAAAD8/wIAAAAAAAIAAAD3//r/AAADAAIAAAD7//r/AAADAAIAAAD6//r/AAACAAIAAAACAPr/AAACAAMAAAD8//3/AAAAAAIAAAD5//3/AAABAAIAAAD9//z/AAADAAIAAAAAAPz/AAACAAIAAAAAAAAAAAAAAAIAAAD+////AAAAAAIAAAD5/wIAAAABAAIAAAD7////AAADAAIAAAD5//7/AAADAAIAAAADAAMAAAAAAAIAAAABAAIAAAADAAIAAAABAAQAAAABAAIAAAAIAAEAAAACAAIAAAAEAAIAAAABAAIAAAAFAAAAAAABAAIAAAAIAAAAAAAAAAIAAAAGAPz/AAACAAIAAAAEAPz/AAADAAIAAAAIAPr/AAACAAIAAAD+/wQAAAAAAAIAAAD9/wEAAAADAAIAAAADAAEAAAACAAIAAAACAAAAAAABAAAAAAACAP//AAACAAEAAAADAAAAAAAAAAIAAAABAAAAAAABAAIAAAA=")
 
-[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background" groups=["win_animation"]]
 libraries = {
 &"": SubResource("AnimationLibrary_exqje")
 }
 
-[node name="GlowAnimation3" type="AnimationPlayer" parent="Background"]
+[node name="GlowAnimation3" type="AnimationPlayer" parent="Background" groups=["win_animation"]]
 libraries = {
 &"": SubResource("AnimationLibrary_f7d2o")
 }

@@ -85,14 +85,13 @@ tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD8//7/AAAEAAIAAAADAAIAAAAEAAI
 [node name="TileMapLayer2" parent="Background" index="5"]
 tile_map_data = PackedByteArray("AAAEAAQAAAAAAAIAAAD8/wMAAAAAAAMAAAD7//z/AAADAAIAAAADAP3/AAACAAMAAAD6/wIAAAADAAIAAAD8//v/AAADAAIAAAD9//7/AAADAAIAAAD8//3/AAADAAIAAAABAAMAAAACAAMAAAACAAUAAAAAAAIAAAAAAAUAAAABAAIAAAD6/wQAAAABAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAADAAAAAAABAAMAAAABAAAAAAADAAMAAAD8/wAAAAADAAMAAAD+/wAAAAABAAMAAAACAP7/AAACAAIAAAAFAP7/AAAAAAIAAAAFAPz/AAACAAIAAAD+//v/AAACAAIAAAD9//3/AAAAAAMAAAD9/wIAAAABAAIAAAA=")
 
-[node name="WinGlow2" parent="Background" instance=ExtResource("3_5e78q")]
-visible = false
+[node name="WinGlow2" parent="Background" groups=["win_glow"] instance=ExtResource("3_5e78q")]
 offset_left = -120.0
 offset_top = -160.0
 offset_right = -80.0
 offset_bottom = -120.0
 
-[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background" groups=["win_animation"]]
 libraries = {
 &"": SubResource("AnimationLibrary_5rvg2")
 }
@@ -100,7 +99,6 @@ libraries = {
 [node name="WinArea" parent="." instance=ExtResource("3_53xsp")]
 position = Vector2(576, 344)
 number = 1
-location = Vector2(576, 344)
 
 [node name="CollisionShape2D" parent="WinArea" index="0"]
 shape = SubResource("RectangleShape2D_5e78q")
@@ -108,7 +106,6 @@ shape = SubResource("RectangleShape2D_5e78q")
 [node name="WinArea2" parent="." instance=ExtResource("3_53xsp")]
 position = Vector2(476, 184)
 number = 2
-location = Vector2(476, 184)
 
 [node name="CollisionShape2D" parent="WinArea2" index="0"]
 shape = SubResource("RectangleShape2D_l4wr6")
@@ -117,23 +114,18 @@ shape = SubResource("RectangleShape2D_l4wr6")
 
 [node name="Coin" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(476, 184)
-coin_name = "a"
 
 [node name="Coin2" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(756, 224)
-coin_name = "b"
 
 [node name="Coin3" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(636, 504)
-coin_name = "c"
 
 [node name="Coin4" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(396, 464)
-coin_name = "d"
 
 [node name="Player" parent="." instance=ExtResource("3_vwg62")]
 position = Vector2(576, 344)
-SPEED = 135.0
 alive = true
 
 [node name="Traps" type="Node2D" parent="."]

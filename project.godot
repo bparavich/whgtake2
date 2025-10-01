@@ -29,6 +29,8 @@ player=""
 trap=""
 win=""
 coin=""
+win_glow=""
+win_animation=""
 
 [input]
 

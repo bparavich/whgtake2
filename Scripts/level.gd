@@ -17,20 +17,20 @@ func _ready() -> void:
 	if score_required == 0:
 		$HUD/UI/Score.visible = false
 	else:
+		$HUD.update_score(score, score_required)
 		$HUD/UI/Score.visible = true
-	$HUD.update_score(score, score_required)
+		
 	StatManager.is_reloading_scene = false
 	
 	if has_checkpoint:
 		StatManager.has_checkpoint = true
 		score = StatManager.checkpoint_score
 		$HUD.update_score(score, score_required)
+		if StatManager.died_this_level:
+			$Player.set_player_postion(has_checkpoint)
 		
 	if has_checkpoint == false and StatManager.died_this_level == true:
 		$Background.start_glow()
-		
-	if StatManager.died_this_level == true and has_checkpoint:
-		$Player.set_player_postion(has_checkpoint)
 		
 	for area in wins:
 		area.win.connect(_on_player_win)	
@@ -43,6 +43,7 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	$HUD.update_level(level)
+	
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
@@ -58,6 +59,7 @@ func _on_player_died():
 		
 	await get_tree().create_timer(1.0).timeout
 	
+	#prevents a double trigger on levels with deathballs close together and hitting player multiple times
 	if not StatManager.is_reloading_scene:
 		StatManager.deaths += 1
 		get_tree().call_deferred("reload_current_scene")
@@ -72,15 +74,8 @@ func _on_player_win(number, location):
 		score = 0
 		StatManager.coins_collected = []
 		
-		if number == 1:
-			$Background.win_glow()
-		elif number == 2:
-			$Background.win_glow_2()
-		elif number == 3:
-			$Background.win_glow_3()
-		elif number == 4:
-			$Background.win_glow_4()
-			
+		$Background.win_glow(number)
+
 		await get_tree().create_timer(0.3).timeout
 		$Player.fade_animation()
 		await get_tree().create_timer(1.5).timeout
@@ -89,14 +84,7 @@ func _on_player_win(number, location):
 		
 	elif score < score_required:
 		if has_checkpoint:
-			if number == 1:
-				$Background.win_glow()
-			elif number == 2:
-				$Background.win_glow_2()
-			elif number == 3:
-				$Background.win_glow_3()
-			elif number == 4:
-				$Background.win_glow_4()
+			$Background.win_glow(number)
 			StatManager.check_number = number
 			StatManager.coins_collected.append_array(coins_collected)
 			StatManager.checkpoint_score = score

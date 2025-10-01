@@ -1,13 +1,29 @@
-[gd_scene load_steps=15 format=4 uid="uid://dkefm1u3hllfc"]
+[gd_scene load_steps=16 format=4 uid="uid://dkefm1u3hllfc"]
 
 [ext_resource type="Script" uid="uid://c8u40f5yxc2wv" path="res://Scripts/level.gd" id="1_folg6"]
 [ext_resource type="PackedScene" uid="uid://7vq00vektkw4" path="res://Scenes/hud.tscn" id="1_jtjvl"]
 [ext_resource type="PackedScene" uid="uid://h2byp0l681f5" path="res://Scenes/background.tscn" id="2_c6h0k"]
+[ext_resource type="PackedScene" uid="uid://2mpk3v70m5m3" path="res://Scenes/final_screen.tscn" id="2_x8rem"]
 [ext_resource type="PackedScene" uid="uid://oeeqtt33gyw1" path="res://Scenes/win_glow.tscn" id="3_c0f84"]
 [ext_resource type="PackedScene" uid="uid://bk5hxwprxnr0o" path="res://Scenes/win_area.tscn" id="4_folg6"]
 [ext_resource type="PackedScene" uid="uid://dsw317nulbdnv" path="res://Scenes/coin.tscn" id="5_c0f84"]
 [ext_resource type="PackedScene" uid="uid://d31poy20qyico" path="res://Scenes/player.tscn" id="5_q24p2"]
 [ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="6_folg6"]
+
+[sub_resource type="Animation" id="Animation_c6h0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_jtjvl"]
 resource_name = "win_glow"
@@ -25,12 +41,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_c6h0k"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0f84"]
+_data = {
+&"RESET": SubResource("Animation_c6h0k"),
+&"win_glow": SubResource("Animation_jtjvl")
+}
+
+[sub_resource type="Animation" id="Animation_q24p2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WinGlow2:modulate")
+tracks/0/path = NodePath("WinGlow3:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,12 +60,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0f84"]
-_data = {
-&"RESET": SubResource("Animation_c6h0k"),
-&"win_glow": SubResource("Animation_jtjvl")
 }
 
 [sub_resource type="Animation" id="Animation_folg6"]
@@ -62,21 +78,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_q24p2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WinGlow3:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x8rem"]
 _data = {
 &"RESET": SubResource("Animation_q24p2"),
@@ -87,6 +88,7 @@ _data = {
 script = ExtResource("1_folg6")
 level = 12
 score_required = 3
+next_level = ExtResource("2_x8rem")
 has_checkpoint = true
 
 [node name="HUD" parent="." instance=ExtResource("1_jtjvl")]
@@ -108,32 +110,32 @@ offset_top = 40.0
 offset_right = 280.0
 offset_bottom = 120.0
 
-[node name="TileMapLayer" parent="Background" index="4"]
-tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD4/wMAAAAEAAEAAAAFAAMAAAADAAAAAAD4//3/AAAAAAAAAAAHAAMAAAAFAAEAAAD4/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wAAAAAAAAAAAAD4////AAAAAAAAAAD4//7/AAAAAAAAAAAFAP//AAADAAAAAAAFAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAABAP7/AAACAAAAAAACAP7/AAAAAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAD7/wMAAAADAAAAAAAEAP//AAADAAAAAAAEAAAAAAABAAAAAAADAAMAAAADAAAAAAACAP3/AAAAAAAAAAABAP3/AAACAAAAAAAHAP//AAADAAAAAAAHAAAAAAAFAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAHAAQAAAABAAAAAAAGAAMAAAADAAAAAAAEAAMAAAADAAAAAAADAAAAAAABAAAAAAADAP//AAADAAAAAAD4/wQAAAABAAAAAAD5/wQAAAABAAAAAAD6/wQAAAABAAAAAAD6/wMAAAADAAAAAAD5/wMAAAADAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD3/wEAAAACAAAAAAD3/wIAAAACAAAAAAD3/wMAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAD3//7/AAACAAAAAAD3//3/AAACAAAAAAD4//z/AAAAAAAAAAABAPv/AAAFAAAAAAACAP//AAAEAAEAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAD9/wQAAAABAAAAAAD+/wQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAABAAQAAAABAAAAAAAAAAQAAAABAAAAAAD//wQAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAADAAAAAAACAAAAAAABAAAAAAABAPz/AAACAAAAAAABAP//AAACAAAAAAACAPz/AAAAAAAAAAACAPv/AAAAAAAAAAD6//r/AAADAAAAAAD7//r/AAADAAAAAAD8//r/AAADAAAAAAD9//r/AAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAAAAPr/AAADAAAAAAABAPr/AAADAAAAAAD4//v/AAAEAAAAAAD5//v/AAABAAAAAAD5//r/AAADAAAAAAD4//r/AAADAAAAAAD3//v/AAACAAAAAAD3//z/AAACAAAAAAA=")
-
-[node name="TileMapLayer2" parent="Background" index="5"]
-tile_map_data = PackedByteArray("AAAIAAQAAAAAAAIAAAD3/wQAAAABAAIAAAABAAAAAAABAAIAAAAIAP//AAACAAIAAAACAPr/AAACAAIAAAD3//r/AAADAAIAAAA=")
-
-[node name="WinGlow2" parent="Background" instance=ExtResource("3_c0f84")]
+[node name="WinGlow2" parent="Background" groups=["win_glow"] instance=ExtResource("3_c0f84")]
 visible = false
 offset_left = -280.0
 offset_top = -160.0
 offset_right = -200.0
 offset_bottom = -80.0
 
-[node name="WinGlow3" parent="Background" instance=ExtResource("3_c0f84")]
+[node name="WinGlow3" parent="Background" groups=["win_glow"] instance=ExtResource("3_c0f84")]
 visible = false
 offset_left = -280.0
 offset_top = 40.0
 offset_right = -200.0
 offset_bottom = 120.0
 
-[node name="GlowAnimation2" type="AnimationPlayer" parent="Background"]
+[node name="TileMapLayer" parent="Background" index="6"]
+tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD4/wMAAAAEAAEAAAAFAAMAAAADAAAAAAD4//3/AAAAAAAAAAAHAAMAAAAFAAEAAAD4/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wAAAAAAAAAAAAD4////AAAAAAAAAAD4//7/AAAAAAAAAAAFAP//AAADAAAAAAAFAAAAAAABAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAABAP7/AAACAAAAAAACAP7/AAAAAAAAAAD9/wMAAAADAAAAAAD+/wMAAAADAAAAAAD//wMAAAADAAAAAAAAAAMAAAADAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAD7/wMAAAADAAAAAAAEAP//AAADAAAAAAAEAAAAAAABAAAAAAADAAMAAAADAAAAAAACAP3/AAAAAAAAAAABAP3/AAACAAAAAAAHAP//AAADAAAAAAAHAAAAAAAFAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAGAAQAAAABAAAAAAAFAAQAAAABAAAAAAAHAAQAAAABAAAAAAAGAAMAAAADAAAAAAAEAAMAAAADAAAAAAADAAAAAAABAAAAAAADAP//AAADAAAAAAD4/wQAAAABAAAAAAD5/wQAAAABAAAAAAD6/wQAAAABAAAAAAD6/wMAAAADAAAAAAD5/wMAAAADAAAAAAD7/wQAAAABAAAAAAD8/wQAAAABAAAAAAD3/wEAAAACAAAAAAD3/wIAAAACAAAAAAD3/wMAAAACAAAAAAD3/wAAAAACAAAAAAD3////AAACAAAAAAD3//7/AAACAAAAAAD3//3/AAACAAAAAAD4//z/AAAAAAAAAAABAPv/AAAFAAAAAAACAP//AAAEAAEAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAD9/wQAAAABAAAAAAD+/wQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAABAAQAAAABAAAAAAAAAAQAAAABAAAAAAD//wQAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAADAAAAAAACAAAAAAABAAAAAAABAPz/AAACAAAAAAABAP//AAACAAAAAAACAPz/AAAAAAAAAAACAPv/AAAAAAAAAAD6//r/AAADAAAAAAD7//r/AAADAAAAAAD8//r/AAADAAAAAAD9//r/AAADAAAAAAD+//r/AAADAAAAAAD///r/AAADAAAAAAAAAPr/AAADAAAAAAABAPr/AAADAAAAAAD4//v/AAAEAAAAAAD5//v/AAABAAAAAAD5//r/AAADAAAAAAD4//r/AAADAAAAAAD3//v/AAACAAAAAAD3//z/AAACAAAAAAA=")
+
+[node name="TileMapLayer2" parent="Background" index="7"]
+tile_map_data = PackedByteArray("AAAIAAQAAAAAAAIAAAD3/wQAAAABAAIAAAABAAAAAAABAAIAAAAIAP//AAACAAIAAAACAPr/AAACAAIAAAD3//r/AAADAAIAAAA=")
+
+[node name="GlowAnimation2" type="AnimationPlayer" parent="Background" groups=["win_animation"]]
 libraries = {
 &"": SubResource("AnimationLibrary_c0f84")
 }
 
-[node name="GlowAnimation3" type="AnimationPlayer" parent="Background"]
+[node name="GlowAnimation3" type="AnimationPlayer" parent="Background" groups=["win_animation"]]
 libraries = {
 &"": SubResource("AnimationLibrary_x8rem")
 }

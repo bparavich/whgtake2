@@ -230,8 +230,6 @@ layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_72w8f")
-metadata/_edit_vertical_guides_ = [482.0, 670.0, 849.0]
-metadata/_edit_horizontal_guides_ = [348.0, 313.0]
 
 [node name="Background" parent="." instance=ExtResource("2_kb5mc")]
 position = Vector2(576, 324)
@@ -258,10 +256,6 @@ visible = false
 
 [node name="Deaths" parent="HUD/UI" index="2"]
 visible = false
-
-[node name="UN" parent="HUD/UI" index="4"]
-offset_top = 592.0
-offset_bottom = 647.0
 
 [node name="mm" type="Button" parent="HUD"]
 offset_left = 368.0
@@ -432,6 +426,7 @@ offset_left = 765.0
 offset_top = 261.0
 offset_right = 970.0
 offset_bottom = 382.0
+level = ExtResource("15_ciagn")
 
 [node name="Panel" parent="ButtonsAndLevels/Panels/Level11b" index="0"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_y1k4n")
@@ -445,6 +440,7 @@ offset_left = 945.0
 offset_top = 261.0
 offset_right = 1150.0
 offset_bottom = 382.0
+level = ExtResource("16_yx562")
 
 [node name="Panel" parent="ButtonsAndLevels/Panels/Level12b" index="0"]
 theme_override_styles/panel = SubResource("StyleBoxFlat_y5eva")

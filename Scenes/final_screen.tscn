@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://2mpk3v70m5m3"]
+
+[ext_resource type="Texture2D" uid="uid://bpv4ev104xggp" path="res://Assets/Textures/main1.png" id="1_vi8pr"]
+[ext_resource type="Script" uid="uid://cq050hloq7dal" path="res://Scripts/final_screen.gd" id="1_wshgw"]
+[ext_resource type="Texture2D" uid="uid://wn2kww4f3rx6" path="res://Assets/Textures/main2.png" id="2_wshgw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpex3"]
+texture = ExtResource("1_vi8pr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8qol"]
+texture = ExtResource("2_wshgw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_om4r5"]
+texture = ExtResource("2_wshgw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aflmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5qc5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wshgw"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
+
+[node name="FinalScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wshgw")
+metadata/_edit_vertical_guides_ = [576.0]
+
+[node name="Black3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.775058, 0.72259, 0.993063, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 379.0
+offset_right = 674.0
+offset_bottom = 542.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_wpex3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s8qol")
+theme_override_styles/hover = SubResource("StyleBoxTexture_om4r5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aflmq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5qc5n")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.55554
+offset_top = 87.0
+offset_right = 1085.4445
+offset_bottom = 347.0
+text = "YOU WON!!!"
+label_settings = SubResource("LabelSettings_wshgw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
