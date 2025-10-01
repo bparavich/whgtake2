@@ -86,6 +86,7 @@ tile_map_data = PackedByteArray("AAD8/wMAAAADAAAAAAD8//7/AAAEAAIAAAADAAIAAAAEAAI
 tile_map_data = PackedByteArray("AAAEAAQAAAAAAAIAAAD8/wMAAAAAAAMAAAD7//z/AAADAAIAAAADAP3/AAACAAMAAAD6/wIAAAADAAIAAAD8//v/AAADAAIAAAD9//7/AAADAAIAAAD8//3/AAADAAIAAAABAAMAAAACAAMAAAACAAUAAAAAAAIAAAAAAAUAAAABAAIAAAD6/wQAAAABAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAADAAAAAAABAAMAAAABAAAAAAADAAMAAAD8/wAAAAADAAMAAAD+/wAAAAABAAMAAAACAP7/AAACAAIAAAAFAP7/AAAAAAIAAAAFAPz/AAACAAIAAAD+//v/AAACAAIAAAD9//3/AAAAAAMAAAD9/wIAAAABAAIAAAA=")
 
 [node name="WinGlow2" parent="Background" groups=["win_glow"] instance=ExtResource("3_5e78q")]
+visible = false
 offset_left = -120.0
 offset_top = -160.0
 offset_right = -80.0
@@ -114,15 +115,19 @@ shape = SubResource("RectangleShape2D_l4wr6")
 
 [node name="Coin" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(476, 184)
+glow_delay = 0.45
 
 [node name="Coin2" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(756, 224)
+glow_delay = 1.5
 
 [node name="Coin3" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(636, 504)
+glow_delay = 0.73
 
 [node name="Coin4" parent="Coins" instance=ExtResource("3_s8nj6")]
 position = Vector2(396, 464)
+glow_delay = 1.2
 
 [node name="Player" parent="." instance=ExtResource("3_vwg62")]
 position = Vector2(576, 344)

@@ -10,6 +10,7 @@ _data = {
 point_count = 5
 
 [node name="Level3Path" type="Path2D"]
+z_index = 1
 curve = SubResource("Curve2D_qf6rc")
 script = ExtResource("1_bhybi")
 speed = 0.08

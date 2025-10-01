@@ -14,6 +14,8 @@ var coins_collected: Array[String] = []
 var score: int = 0
 
 func _ready() -> void:
+	#in case a death occurs when tring to pause
+	get_tree().paused = false
 	#Updates hud with current level
 	$HUD.update_level(level)
 	#Hides the score required label if no coins present on level

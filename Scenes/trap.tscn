@@ -92,6 +92,42 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -60)]
 }
 
+[sub_resource type="Animation" id="Animation_ecdit"]
+resource_name = "level_12_down"
+length = 5.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 340)]
+}
+
+[sub_resource type="Animation" id="Animation_i78fs"]
+resource_name = "level_12_up"
+length = 5.0
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -340)]
+}
+
 [sub_resource type="Animation" id="Animation_8uao8"]
 resource_name = "level_1_left"
 length = 2.2
@@ -344,42 +380,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 108), Vector2(-40, 108), Vector2(0, 108)]
 }
 
-[sub_resource type="Animation" id="Animation_i78fs"]
-resource_name = "level_12_up"
-length = 5.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -340)]
-}
-
-[sub_resource type="Animation" id="Animation_ecdit"]
-resource_name = "level_12_down"
-length = 5.0
-loop_mode = 1
-step = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 340)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8uao8"]
 _data = {
 &"RESET": SubResource("Animation_xmcxk"),
@@ -406,6 +406,7 @@ _data = {
 }
 
 [node name="Trap" type="Node2D" groups=["trap"]]
+z_index = 1
 script = ExtResource("1_xmcxk")
 
 [node name="Trap" type="Area2D" parent="."]

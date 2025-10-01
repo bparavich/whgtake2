@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brh3pio6rorq2" path="res://Scenes/trap.tscn" id="1_awvsc"]
 
 [node name="Level6Trap" type="Node2D"]
+z_index = 1
 script = ExtResource("1_2qmcu")
 rotate_right = false
 metadata/_edit_vertical_guides_ = [25.0, 50.0, 75.0]

@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="Level4SpinTrap" type="Node2D"]
+z_index = 1
 script = ExtResource("1_x78jo")
 
 [node name="Node2D" type="Node2D" parent="."]

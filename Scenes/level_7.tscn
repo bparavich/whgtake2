@@ -14,7 +14,8 @@ script = ExtResource("1_7e1oo")
 level = 7
 score_required = 36
 next_level = ExtResource("2_vpjpy")
-metadata/_edit_vertical_guides_ = [436.0, 396.0]
+metadata/_edit_vertical_guides_ = [436.0, 396.0, 736.0]
+metadata/_edit_horizontal_guides_ = [204.0, 484.0]
 
 [node name="HUD" parent="." instance=ExtResource("1_hewxp")]
 
@@ -55,151 +56,187 @@ position = Vector2(416, 204)
 
 [node name="Coin" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(-20, -20)
+glow_delay = 0.12
 metadata/_edit_group_ = true
 
 [node name="Coin2" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(0, -20)
+glow_delay = 0.84
 metadata/_edit_group_ = true
 
 [node name="Coin3" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(20, -20)
+glow_delay = 0.453
 metadata/_edit_group_ = true
 
 [node name="Coin4" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(20, 0)
+glow_delay = 0.485
 metadata/_edit_group_ = true
 
 [node name="Coin5" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
+glow_delay = 0.375
 metadata/_edit_group_ = true
 
 [node name="Coin6" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 0)
+glow_delay = 0.756
 metadata/_edit_group_ = true
 
 [node name="Coin7" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 22)
+glow_delay = 1.2530000000000001
 metadata/_edit_group_ = true
 
 [node name="Coin8" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(0, 22)
+glow_delay = 0.687
 metadata/_edit_group_ = true
 
 [node name="Coin9" parent="Coins/Node2D" instance=ExtResource("5_38lld")]
 position = Vector2(20, 22)
-metadata/_edit_group_ = true
-
-[node name="Node2D2" type="Node2D" parent="Coins"]
-position = Vector2(736, 204)
-
-[node name="Coin" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(-20, -20)
-metadata/_edit_group_ = true
-
-[node name="Coin2" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(0, -20)
-metadata/_edit_group_ = true
-
-[node name="Coin3" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(20, -20)
-metadata/_edit_group_ = true
-
-[node name="Coin4" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(20, 0)
-metadata/_edit_group_ = true
-
-[node name="Coin5" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-metadata/_edit_group_ = true
-
-[node name="Coin6" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(-20, 0)
-metadata/_edit_group_ = true
-
-[node name="Coin7" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(-20, 22)
-metadata/_edit_group_ = true
-
-[node name="Coin8" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(0, 22)
-metadata/_edit_group_ = true
-
-[node name="Coin9" parent="Coins/Node2D2" instance=ExtResource("5_38lld")]
-position = Vector2(20, 22)
+glow_delay = 0.877
 metadata/_edit_group_ = true
 
 [node name="Node2D3" type="Node2D" parent="Coins"]
-position = Vector2(416, 484)
+position = Vector2(736, 204)
 
 [node name="Coin" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(-20, -20)
+glow_delay = 0.12
 metadata/_edit_group_ = true
 
 [node name="Coin2" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(0, -20)
+glow_delay = 0.84
 metadata/_edit_group_ = true
 
 [node name="Coin3" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(20, -20)
+glow_delay = 0.453
 metadata/_edit_group_ = true
 
 [node name="Coin4" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(20, 0)
+glow_delay = 0.485
 metadata/_edit_group_ = true
 
 [node name="Coin5" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
+glow_delay = 0.375
 metadata/_edit_group_ = true
 
 [node name="Coin6" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 0)
+glow_delay = 0.756
 metadata/_edit_group_ = true
 
 [node name="Coin7" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 22)
+glow_delay = 1.2530000000000001
 metadata/_edit_group_ = true
 
 [node name="Coin8" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(0, 22)
+glow_delay = 0.687
 metadata/_edit_group_ = true
 
 [node name="Coin9" parent="Coins/Node2D3" instance=ExtResource("5_38lld")]
 position = Vector2(20, 22)
+glow_delay = 0.877
 metadata/_edit_group_ = true
 
-[node name="Node2D4" type="Node2D" parent="Coins"]
-position = Vector2(736, 484)
+[node name="Node2D2" type="Node2D" parent="Coins/Node2D3"]
+position = Vector2(-320, 280)
 
-[node name="Coin" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(-20, -20)
+glow_delay = 0.12
 metadata/_edit_group_ = true
 
-[node name="Coin2" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin2" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(0, -20)
+glow_delay = 0.84
 metadata/_edit_group_ = true
 
-[node name="Coin3" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin3" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(20, -20)
+glow_delay = 0.453
 metadata/_edit_group_ = true
 
-[node name="Coin4" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin4" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(20, 0)
+glow_delay = 0.485
 metadata/_edit_group_ = true
 
-[node name="Coin5" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin5" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
+glow_delay = 0.375
 metadata/_edit_group_ = true
 
-[node name="Coin6" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin6" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 0)
+glow_delay = 0.756
 metadata/_edit_group_ = true
 
-[node name="Coin7" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin7" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(-20, 22)
+glow_delay = 1.2530000000000001
 metadata/_edit_group_ = true
 
-[node name="Coin8" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin8" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(0, 22)
+glow_delay = 0.687
 metadata/_edit_group_ = true
 
-[node name="Coin9" parent="Coins/Node2D4" instance=ExtResource("5_38lld")]
+[node name="Coin9" parent="Coins/Node2D3/Node2D2" instance=ExtResource("5_38lld")]
 position = Vector2(20, 22)
+glow_delay = 0.877
+metadata/_edit_group_ = true
+
+[node name="Node2D4" type="Node2D" parent="Coins/Node2D3"]
+position = Vector2(0, 280)
+
+[node name="Coin" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(-20, -20)
+glow_delay = 0.12
+metadata/_edit_group_ = true
+
+[node name="Coin2" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(0, -20)
+glow_delay = 0.84
+metadata/_edit_group_ = true
+
+[node name="Coin3" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(20, -20)
+glow_delay = 0.453
+metadata/_edit_group_ = true
+
+[node name="Coin4" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(20, 0)
+glow_delay = 0.485
+metadata/_edit_group_ = true
+
+[node name="Coin5" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+glow_delay = 0.375
+metadata/_edit_group_ = true
+
+[node name="Coin6" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(-20, 0)
+glow_delay = 0.756
+metadata/_edit_group_ = true
+
+[node name="Coin7" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(-20, 22)
+glow_delay = 1.2530000000000001
+metadata/_edit_group_ = true
+
+[node name="Coin8" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(0, 22)
+glow_delay = 0.687
+metadata/_edit_group_ = true
+
+[node name="Coin9" parent="Coins/Node2D3/Node2D4" instance=ExtResource("5_38lld")]
+position = Vector2(20, 22)
+glow_delay = 0.877
 metadata/_edit_group_ = true
 
 [node name="Traps" type="Node2D" parent="."]

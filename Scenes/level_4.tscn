@@ -57,33 +57,42 @@ position = Vector2(539, 302)
 
 [node name="Coin" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(-3, 62)
+glow_delay = 1.5
 
 [node name="Coin2" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(11, 14)
+glow_delay = 1.88
 
 [node name="Coin3" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(51, -14)
+glow_delay = 0.62
 
 [node name="Coin4" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(103, -14)
 
 [node name="Coin5" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(132, 14)
+glow_delay = 2.0
 
 [node name="Coin6" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(157, 62)
+glow_delay = 1.5470000000000002
 
 [node name="Coin7" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(153, 110)
+glow_delay = 0.679
 
 [node name="Coin8" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(103, 138)
+glow_delay = 1.7
 
 [node name="Coin9" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(51, 138)
+glow_delay = 1.175
 
 [node name="Coin10" parent="Coins" instance=ExtResource("4_5a8oa")]
 position = Vector2(11, 110)
+glow_delay = 0.333
 
 [node name="Player" parent="." instance=ExtResource("5_3ntyy")]
 position = Vector2(616, 124)
